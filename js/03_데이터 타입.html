@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3># Javascript의 데이터 타입</h3>
+
+    <ul>
+        <li>숫자 (Number) : 자바스크립트에서는 정수와 실수를 모두 Number타입이다</li>
+        <li>문자열(String) : 문자열에'', "" 모두 사용 가능하다</li>
+        <li>boolean</li>
+        <li>Array</li>
+        <li>Object</li>
+    </ul>
+
+    <script>
+        let a = 10;
+
+        console.log(typeof a);
+
+        console.log(typeof 123); //number
+        console.log(typeof 123.123); //number
+        console.log(typeof '123');
+        console.log(typeof "123");
+        console.log(typeof true);
+
+        // []를 쓰면 배열이다
+        let arr1 = [1,2,3,4,5,6,7];
+
+        console.log(arr1);
+        console.log(arr1[0]);
+        console.log(arr1[3]);
+        console.log(typeof arr1);
+
+        // {}f를 쓰면 오브젝트다 (key와 value로 이루어져 있다)
+        let person = {
+            age: 30,
+            name: '김말이',
+            address: '서울시 무슨구 무슨동',
+        };
+
+        // 오브젝트 활용
+        console.log(person.age);
+        console.log(person.name);
+        console.log(person.address);
+
+        // 오브젝트 활용2;
+        console.log(person['age']);
+        console.log(person['name']);
+        console.log(person['address']);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sheets/css07.css">
+</head>
+<body>
+
+        <h3># Document Object Model (DOM)</h3>
+
+    <ul>
+        <li>웹 브라우저가 HTML코드를 통해 해당 웹 페이지의 구조를 해석하여 생성해둔 객체</li>
+        <li>자바스크립트의 Document 객체를 통해 해당 HTML요소에 접근할 수 있다</li>
+    </ul>
+
+    <h3># 원하는 HTML 요소를 선택하기 위한 메서드들</h3>
+
+    <ul>
+        <li>document.getElementById(id): 
+            id로 HTML요소를 선택한다 (겹치는 아이디가 있어도 하나만 가져옴)</li>
+        <li>document.getElementsByTagName(tagName) : 
+            해당 태그 이름을 가진 모든 HTML요소들을 선택한다 (배열 리턴)
+        </li>
+        <li>document.getElementsByClassName(cassName):
+            해당 클래스 이름을 가진 모든 HTML요소들을 선택한다 (여러개 리턴)
+        </li>
+        <li>document.querySelector(cssSelector):
+            CSS선택자를 사용해 원하는 요소를 하나만 선택한다
+        </li>
+        <li>document.querySelectorAll(cssSelector) : 
+            CSS선택자를 이용해 원하는 요소들을 여러개 선택한다
+        </li>
+    </ul>
+
+    <h3># 선택한 HTML요소를 변경하기 위한 속성</h3>
+
+    <ul>
+        <li>element.innerHTML: 해당 요소의 내용을 변경한다 (태그 적용)</li>
+        <li>element.innerText: 해당 요소의 내용을 변경한다(태그 미적용)</li>
+        <li>element.style : 스타일 속성을 변경한다</li>
+        <li>element.className 클래스 속성을 변경한다</li>
+        <li>element.속성이름 원하는 html속성을 변경한다</li>
+        <li>element.classList 클래스 속성을 쉽게 변경할 수 있는 컬렉션을 사용한다</li>
+
+    </ul>
+
+    <img id="penguin_image">
+
+    <div id = "menu_wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>이탈리안 BLT</div>
+        <div class="important bg-yellow">부대찌개</div>
+    </div>
+    <script>
+        // 원하는 HTML요소를 선택해서 가져온 후에는 모든 속성을 자바스크립트로 수정할수있다
+        const penguin_image = document.getElementById('penguin_image');
+
+        // 어떤속성이 있는지는 console.dir()로 화인할수있다
+        console.dir(penguin_image);
+
+        penguin_image.src = '../css/images/다운로드.jpg';
+        penguin_image.alt = '그림';
+        penguin_image.width = '150';
+        let count = 1;
+        penguin_image.onclick = function(){
+            console.log('펭귄을' + count++  +  '번째로 눌렀습니다');
+        };
+
+
+        const menu_wrap = document.getElementById('menu_wrap');
+        const menus = document.querySelectorAll('#menu_wrap > div');
+
+
+        console.log(menu_wrap);
+        console.log(typeof menu_wrap);
+        console.dir(menu_wrap);
+
+        console.log(menus);
+        console.dir(menus);
+
+        menus[0].innerHTML = '<b>안녕하세요!!</b>'; // 태그 적용됨 (보안 취약)
+        menus[1].innerText = '<b>ㅎㅇㅎㅇ</b>'; // 태그 적용되지 않음 (안전)
+
+        // 자바스크립트로 선택한 요소의 스타일을 변경할 수 있다
+        // -가 있는 속성은 camelCase로 치환해주면 된다
+        menus[2].innerText = '오늘의 메뉴';
+        menus[2].style.color = 'white';
+        menus[2].style.backgroundColor = 'peru';
+        menus[2].style.border = '3px solid black';
+        menus[2].style.padding = '10px';
+        menus[2].style.fontSize = '30px';
+
+        // 나중에 클래스를 붙여서 스타일 시트의 효과를 받게 만들 수 있다
+        menus[3].className = 'important';
+
+        // classList를 사용하면 클래스를 좀 더 쉽게 수정 할 수 있다
+        console.log(menus[4].classList);
+
+        // classList.remove(string,...) : 지우고 싶은 클래스들을 지워준다
+        menus[4].classList.remove('important','bg-yellow');
+
+        // classList.add(string,...) : 추가하고 싶은 클래스들을 추가해준다
+        menus[4].classList.add('bg-blue','fa-beat');
+
+        // classList.toggle(string) : 있으면 없애고, 없으면 추가한다
+        menus[4].classList.toggle('on');
+        menus[4].classList.toggle('on');
+    </script>
+</body>
+</html>

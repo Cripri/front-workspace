@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3># 자바스크립트의 산술 연산자</h3>
+
+    <ul>
+        <li>있을건 다 있다</li>
+        <li>자바와 다르게 정수와 정수를 나누더라도 실수가 나온다</li>
+        <li>나누기의 몫만 구하고 싶다면 나누기 결과를
+            parseInt 또는 Math.floor로 버려서 구해야 한다
+        </li>
+    </ul>
+
+    <h3># 자바스크립트의 비교 연산다</h3>
+
+    <ul>
+        <li>자바와 거의 비슷하지만 다른것이 있다</li>
+        <li>==, != : 두값이 타입이 달라도 같은 값으로 여긴다</li>
+        <li>===, !== :  두 값의 타입까지 같아야 같은 값으로 여긴다</li>
+    </ul>
+    
+    <script>
+        let a = 13, b = 7;
+
+
+        console.log(a + b);
+        console.log(a - b);
+        console.log(a * b);
+        console.log(a / b);
+        console.log(a % b);
+
+        //실수를 정수로 바꾸는 방법들
+        console.log(parseInt(a / b));
+        console.log(Math.floor(a/b));
+        console.log(Math.round(a/b));
+
+        let num1 = 123;
+        let num2 = 123;
+        let num3 = '123';
+
+        console.log(num1 == num2);
+        console.log(num1 == num3);
+        console.log(num1 != num3);
+
+        console.log(num1 === num3);
+        console.log(num1 !== num3);
+
+        i = 10;
+        console.log(++i);
+        console.log(i++);
+        console.log(i);
+
+    </script>
+
+</body>
+</html>
