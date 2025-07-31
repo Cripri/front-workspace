@@ -1,0 +1,83 @@
+#border-list{
+    border: solid 3px black;
+    list-style-type: none;
+}
+
+#border-list > li{
+    border: solid 5px slategray;
+    padding: 5px;
+    margin: 5px;
+}
+
+#border-list > :first-child{
+    border-style: solid;
+}
+
+#border-list > :nth-child(2){
+    border-style: dotted;
+}
+
+#border-list > :nth-child(3){
+    border-style: dashed;
+}
+
+#border-list > :nth-child(4){
+    border-style: double;
+}
+
+#border-list > :nth-child(5){
+    border-style: inset;
+}
+
+#border-list > :nth-child(6){
+    border-style: outset;
+}
+
+#border-list > :nth-child(7){
+    border-style: ridge;
+}
+
+#border-list > :nth-child(8){
+    /*
+        border: 해서 한번에 설정하는 것도 가능하고
+        border-style, border-width, border-color를 따로따로 설정하는 것도 가능
+    */
+    border-style: groove;
+    border-width: 11px;
+    border-color: orangered;
+}
+
+#multi-value-test{
+    list-style-type: none;
+    padding: 5px;
+}
+
+#multi-value-test > li{
+    padding: 5px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+#multi-value-test > li:first-child{
+    border-style:  dashed;
+    border-width: 10px;
+    border-color: mediumaquamarine;
+}
+
+#multi-value-test > li:nth-child(2){
+    border-style: solid double;
+    border-width: 8px 3px;
+    border-color: red blue;
+}
+
+#multi-value-test > li:nth-child(3){
+    border-style: solid double dotted;
+    border-width: 8px 3px 5px;
+    border-color: red blue green;
+}
+
+#multi-value-test > li:nth-child(4){
+    border-style: solid double dotted outset;
+    border-width: 8px 3px 5px 10px;
+    border-color: red blue green gold;
+}

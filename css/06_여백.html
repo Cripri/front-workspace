@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheet/css06.css">
+</head>
+<body>
+    <h3>margin</h3>
+
+    <ul>
+        <li> 해당 요소와 다른 요소 간의 거리를 결정하는 여백</li>
+        <li>border 기준 바깥쪽에 존재하는 여백</li>
+        <li>margin-bottom과 bargin-top이 만나는 곳에서는
+            두 값중 더 높은 값 하나만 적용된다 (합산 적용 x)
+        </li>
+        <li>좌우의 margin을 auto로 설정하면 가운데로 정렬해준다</li>
+
+    </ul>
+
+    <div class="margin-test-box">div1</div>
+    <div class="margin-test-box">div2</div>
+    <div class="margin-test-box">div3</div>
+
+    <h3>padding</h3>
+
+    <ul>
+        <li>border 기준으로 안쪽에 존재하는 여백</li>
+        <li>요소의 내용이 차지하는 영역(content-box)부터 border까지의 거리를 의미한다</li>
+
+    </ul>
+
+    <div id="padding-box1">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Possimus quia illum quibusdam, excepturi minus reprehenderit
+        , ullam aspernatur quod non ducimus autem laborum,
+         est commodi iusto velit debitis. Eveniet, eius iusto.</div>
+    <div id="padding-box2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+         Modi consequatur dicta possimus ad officia accusamus sapiente,
+         quam iste totam. Voluptates fugit placeat dolores odit maxime,
+          soluta perferendis iste veniam reprehenderit?</div>
+
+    <h3># HTML Box Model</h3>
+
+    <ul>
+        <li>HTML은 모든 요소를 박스 형태로 구성한다</li>
+        <li>
+            제일 안쪽에 content-box가 있고, content-box를 둘러싼
+            padding, border, margin으로 요소의 크기와 위치를 결정한다
+        </li>
+        <li>
+            기본적으로 요소 전체의 크기는 content-box의 크기와
+            padding과 border의 굵기를 더한 값이0 된다
+        </li>
+        <li>
+            box-sizing을 border-box로 설정한 후에는 width와 height값 만으로
+            요소 전체의 크기(border-box의 크기)가 결정된다
+        </li>
+    </ul>
+
+    <div id="box1">Box1</div>
+    <div id="box2">Box2</div>
+
+    
+</body>
+</html>

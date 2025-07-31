@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheet/css14.css">
+</head>
+<body>
+
+    <h3># Float</h3>
+
+    <ul>
+        <li>다른 내용들이 float이 설정된 요소를 비켜가게 만드는 속성</li>
+        <li>float이 설정된 요소는 냇가에 박혀있는 돌 같은 느낌이 된다</li>
+
+    </ul>
+
+    <h5># float-left</h5>
+
+    <div class="article">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eum ratione omnis, provident qui ad explicabo amet delectus laudantium repellat optio praesentium, rem distinctio culpa officia, repudiandae quis molestiae tempore.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum eos, repellendus debitis inventore quae aliquid architecto vitae. Excepturi debitis labore quae eaque repudiandae esse molestiae dicta iste aut enim.
+        <img class="article-img float-left" src="./images/다운로드.jpg" alt="사과">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum eligendi eius recusandae molestiae. Vero quis, delectus eos eius rerum exercitationem ullam ipsam expedita, incidunt id perferendis soluta porro quos sapiente.
+        Aliquid accusantium exercitationem placeat? Aliquid vero, dolores delectus eligendi voluptatum officiis. Asperiores reiciendis voluptas aliquam suscipit labore quas. A qui id sit soluta, possimus tempora officiis vitae adipisci minus doloremque!
+    </div>
+
+    <h5># float-right</h5>
+    <div class="article">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eum ratione omnis, provident qui ad explicabo amet delectus laudantium repellat optio praesentium, rem distinctio culpa officia, repudiandae quis molestiae tempore.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum eos, repellendus debitis inventore quae aliquid architecto vitae. Excepturi debitis labore quae eaque repudiandae esse molestiae dicta iste aut enim.
+        <img class="article-img float-right" src="./images/다운로드.jpg" alt="사과">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum eligendi eius recusandae molestiae. Vero quis, delectus eos eius rerum exercitationem ullam ipsam expedita, incidunt id perferendis soluta porro quos sapiente.
+        Aliquid accusantium exercitationem placeat? Aliquid vero, dolores delectus eligendi voluptatum officiis. Asperiores reiciendis voluptas aliquam suscipit labore quas. A qui id sit soluta, possimus tempora officiis vitae adipisci minus doloremque!
+    </div>
+
+    <h5># 컨텐츠의 양이 충분하지 않은 경우 float요소가 박스를 벗어나게 된다</h5>
+    <div class="article">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum eos, repellendus debitis inventore quae aliquid architecto vitae. Excepturi debitis labore quae eaque repudiandae esse molestiae dicta iste aut enim.
+        <img class="article-img float-left" src="./images/다운로드.jpg" alt="사과">
+        Aliquid accusantium exercitationem placeat? Aliquid vero, dolores delectus eligendi voluptatum officiis. Asperiores reiciendis voluptas aliquam suscipit labore quas. A qui id sit soluta, possimus tempora officiis vitae adipisci minus doloremque!
+    </div>
+
+    <h3># clear 속성 사용하기</h3>
+
+    <ul>
+        <li>clear: left - 해당 요소의 왼쪽에 float 요소가 올 수 없게 만든다</li>
+        <li>clear: right - 해당 요소의 오른쪽에 float 요소가 올 수 없게 만든다</li>
+        <li>clear: both - 해당 요소 양쪽에 float요소가 올 수 없게 만든다</li>
+    </ul>
+
+    <h5>
+        # 컨텐츠의 양이 충분하지 않은 경우 float요소가 박스를 벗어나게 된다
+        (해당 방향 clear를 통해 해결할 수 있다)
+    </h5>
+    <div class="article">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum eos, repellendus debitis inventore quae aliquid architecto vitae. Excepturi debitis labore quae eaque repudiandae esse molestiae dicta iste aut enim.
+        <img class="article-img float-left" src="./images/다운로드.jpg" alt="사과">
+        Aliquid accusantium exercitationem placeat? Aliquid vero, dolores delectus eligendi voluptatum officiis. Asperiores reiciendis voluptas aliquam suscipit labore quas. A qui id sit soluta, possimus tempora officiis vitae adipisci minus doloremque!
+        <div style="clear: left;"></div>
+    </div>
+
+    <h5>
+        # 컨텐츠의 양이 충분하지 않은 경우 float요소가 박스를 벗어나게 된다2
+        (float 요소들이 겹치는 것도 clear로 해결할 수 있다)
+    </h5>
+    <div class="article">
+        <img class="article-img float-left" src="./images/다운로드.jpg" alt="사과">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum eos, repellendus debitis inventore quae aliquid architecto vitae. Excepturi debitis labore quae eaque repudiandae esse molestiae dicta iste aut enim.
+        <div style="clear: left; border: 1px solid black; height: 10px;"></div>
+        <img class="article-img float-right" src="./images/다운로드.jpg" alt="사과">
+        Aliquid accusantium exercitationem placeat? Aliquid vero, dolores delectus eligendi voluptatum officiis. Asperiores reiciendis voluptas aliquam suscipit labore quas. A qui id sit soluta, possimus tempora officiis vitae adipisci minus doloremque!
+        <div style="clear: right;"></div>
+    </div>
+
+    <h3># float 악용하기</h3>
+
+    <h5># 여러 요소를 같은 방향으로 float을 설정하여 여러개 쌓을 수 있다</h5>
+    <div id="float-box1">
+        <img id="float-image1" src="./images/다운로드.jpg">
+        <img id="float-image2" src="./images/다운로드.jpg">
+        <img id="float-image3" src="./images/다운로드.jpg">
+    </div>
+
+
+    <h5># 이를 악용하여 float을 통해 원하는 사이트 레이아웃을 구성할 수 있다</h5>
+    <div id="float-box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3># 연습문제</h3>
+
+    <div id="book_info">
+        <div class="badge_list_box">
+            <b class="badge_line_navy">2025년 07월 25일 오늘의 선택</b>
+            <b class="badge_line_navy">MD의 선택</b>
+            <b class="badge_line_gray">무료배송</b>
+            <b class="badge_line_gray">사은품</b>
+            <b class="badge_line_gray">소득공제</b>
+        </div>
+
+        <div class="price_box">
+            <b class="percent">10%</b>
+            <b class="sale_price">19,800원</b>
+            <b class="price">22,000원</b>
+        </div>
+        <div class="oiubt_box">
+            적립/혜택
+            1,100P icon
+        </div>
+    </div>
+
+    
+</body>
+</html>

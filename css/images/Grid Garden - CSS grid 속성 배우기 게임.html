@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://cssgridgarden.com/#ko -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Grid Garden - CSS grid 속성 배우기 게임</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url" content="https://cssgridgarden.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Grid Garden">
+    <meta property="og:description" content="A game for learning CSS grid layout">
+    <meta property="og:image" content="https://cssgridgarden.com/images/screenshot.png">
+    <meta name="twitter:url" content="https://cssgridgarden.com">
+    <meta name="twitter:title" content="Grid Garden">
+    <meta name="twitter:description" content="A game for learning CSS grid layout">
+    <meta name="twitter:image" content="https://cssgridgarden.com/images/screenshot.png">
+    <meta name="google-adsense-account" content="ca-pub-9569380550956585">
+    <link rel="stylesheet" href="./Grid Garden - CSS grid 속성 배우기 게임_files/animate.min.css">
+    <link href="./Grid Garden - CSS grid 속성 배우기 게임_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Grid Garden - CSS grid 속성 배우기 게임_files/style.css">
+  <style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+</style><script charset="utf-8" src="./Grid Garden - CSS grid 속성 배우기 게임_files/button.856debeac157d9669cf51e73a08fbc93.js.다운로드"></script></head>
+  <body>
+    <section id="sidebar">
+      <div class="header">
+        <div>
+          <h1 class="title">Grid Garden</h1>
+        </div>
+        <div id="level-counter">
+          <span class="arrow left">
+            <span class="triangle"></span>
+          </span>
+          <span id="level-indicator">
+            <span id="labelLevel" class="translate">단계</span>
+            <span class="current">21</span>
+            <span id="labelOf" class="translate">of</span>
+            <span class="total">28</span>
+            <span class="caret">▾</span>
+          </span>
+          <span class="arrow right">
+            <span class="triangle"></span>
+          </span>
+          <div id="levelsWrapper" class="tooltip" style="display: none;">
+            <div id="levels"><span class="level-marker solved" data-level="0" title="grid-column-start 1">1</span><span class="level-marker solved" data-level="1" title="grid-column-start 2">2</span><span class="level-marker solved" data-level="2" title="grid-column-end 1">3</span><span class="level-marker solved" data-level="3" title="grid-column-end 2">4</span><span class="level-marker solved" data-level="4" title="grid-column-end 3">5</span><span class="level-marker solved" data-level="5" title="grid-column-start 3">6</span><span class="level-marker solved" data-level="6" title="grid-column-end 4">7</span><span class="level-marker solved" data-level="7" title="grid-column-end 5">8</span><span class="level-marker solved" data-level="8" title="grid-column-start 4">9</span><span class="level-marker solved" data-level="9" title="grid-column 1">10</span><span class="level-marker solved" data-level="10" title="grid-column 2">11</span><span class="level-marker solved" data-level="11" title="grid-row-start 1">12</span><span class="level-marker solved" data-level="12" title="grid-row-start 2">13</span><span class="level-marker solved" data-level="13" title="grid-column-row 1">14</span><span class="level-marker solved" data-level="14" title="grid-column-row 2">15</span><span class="level-marker solved" data-level="15" title="grid-area 1">16</span><span class="level-marker solved" data-level="16" title="grid-area 2">17</span><span class="level-marker solved" data-level="17" title="order 1">18</span><span class="level-marker solved" data-level="18" title="order 2">19</span><span class="level-marker solved" data-level="19" title="grid-template-columns 1">20</span><span class="level-marker current" data-level="20" title="grid-template-columns 2">21</span><span class="level-marker" data-level="21" title="grid-template-columns 4">22</span><span class="level-marker" data-level="22" title="grid-template-columns 5">23</span><span class="level-marker" data-level="23" title="grid-template-columns 3">24</span><span class="level-marker" data-level="24" title="grid-template-columns 6">25</span><span class="level-marker" data-level="25" title="grid-template-rows 1">26</span><span class="level-marker" data-level="26" title="grid-template 1">27</span><span class="level-marker" data-level="27" title="grid-template 2">28</span></div>
+            <div id="labelReset" class="translate">재시작</div>
+          </div>
+        </div>
+      </div>
+      <p id="instructions"><p>동일한 너비의 열(column)들을 지정할려면 불편할 수 있습니다. 다행스럽게도 <code>repeat</code> 함수가 이 문제를 해결해줍니다.</p><p>예를 들면, <code>grid-template-columns: 20% 20% 20% 20% 20%;</code>와 같이 이전에는 설정했었지만, <code>grid-template-columns: repeat(5, 20%);</code>와 같이 설정해도 동일합니다.</p><p><code class="help">grid-template-columns</code>과 함께 <code>repeat</code> 함수를 사용하여, 8개의 12.5% 동일한 너비를 가진 열을 만들어보세요. 이렇게하면 당신은 물을 더 낭비하지 않게됩니다.</p></p>
+      <div id="editor" class="">
+        <div id="css">
+          <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14</div>
+          <pre id="before">#garden {
+  display: grid;
+</pre>
+          <textarea id="code" autofocus="" autocapitalize="none" spellcheck="false" style="height: 24px;"></textarea>
+          <pre id="after">  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column: 1;
+  grid-row: 1;
+}</pre>
+        </div>
+        <button id="next" class="translate disabled">다음</button>
+      </div>
+      <div id="share" style="display: none;">
+        <div class="games">
+          <a target="_blank" data-title="Flexbox Froggy" href="https://codepip.com/games/flexbox-froggy/">
+            <img src="./Grid Garden - CSS grid 속성 배우기 게임_files/flexbox-froggy.png" alt="Flexbox Froggy">
+          </a>
+          <a target="_blank" data-title="Anchoreum" href="https://codepip.com/games/anchoreum/">
+            <img src="./Grid Garden - CSS grid 속성 배우기 게임_files/anchoreum.png" alt="Anchoreum">
+          </a>
+          <a target="_blank" data-title="Disarray" href="https://codepip.com/games/disarray/">
+            <img src="./Grid Garden - CSS grid 속성 배우기 게임_files/disarray.png" alt="Disarray">
+          </a>
+          <a target="_blank" data-title="CSS Scoops" href="https://codepip.com/games/css-scoops/">
+            <img src="./Grid Garden - CSS grid 속성 배우기 게임_files/css-scoops.png" alt="CSS Scoops">
+          </a>
+        </div>
+        <p class="social">
+          <span id="tweet"><a href="https://twitter.com/share" class="twitter-share-button twitter-share-button-error" {count}="" data-url="https://cssgridgarden.com" data-via="thomashpark" data-text="I just beat Grid Garden, a game for learning CSS grid layout!" data-twitter-extracted-i1753847387389142037="true">Tweet</a> <a href="https://twitter.com/thomashpark" class="twitter-follow-button twitter-follow-button-error" data-show-count="false" data-twitter-extracted-i1753847387388203722="true">Follow @thomashpark</a></span>
+          <span class="fb-like fb_iframe_widget" data-href="https://cssgridgarden.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=1820320434958041&amp;container_width=0&amp;href=https%3A%2F%2Fcssgridgarden.com%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f802b9a1bea5b4b58" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./Grid Garden - CSS grid 속성 배우기 게임_files/like.html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></span>
+        </p>
+      </div>
+
+      <div class="credits">
+        <span id="labelFooter" class="translate">Grid Garden는 다음에 의해 개발되었습니다</span>
+        <a href="https://codepip.com/">Codepip</a> •
+        <a href="https://youtube.com/codepip">YouTube</a> •
+        <a href="https://twitter.com/playcodepip">Twitter</a> •
+        <a href="https://github.com/thomaspark/gridgarden/">GitHub</a> •
+        <span id="language">
+          <span id="languageActive" class="toggle translate">한국어</span>
+          <span class="tooltip" style="display: none;">
+            <a href="https://cssgridgarden.com/#en">English</a>
+            <a href="https://cssgridgarden.com/#es">Español</a>
+            <a href="https://cssgridgarden.com/#fr">Français</a>
+            <a href="https://cssgridgarden.com/#de">Deutsch</a>
+            <a href="https://cssgridgarden.com/#nl">Nederlands</a>
+            <a href="https://cssgridgarden.com/#it">Italiano</a>
+            <a href="https://cssgridgarden.com/#pt-br">Português(BR)</a>
+            <a href="https://cssgridgarden.com/#pt-pt">Português(PT)</a>
+            <a href="https://cssgridgarden.com/#ca">Català</a>
+            <a href="https://cssgridgarden.com/#sv">Svenska</a>
+            <a href="https://cssgridgarden.com/#no">Norsk</a>
+            <a href="https://cssgridgarden.com/#fi">Suomi</a>
+            <a href="https://cssgridgarden.com/#pl">Polski</a>
+            <a href="https://cssgridgarden.com/#sk">Slovenčina</a>
+            <a href="https://cssgridgarden.com/#hu">Magyar</a>
+            <a href="https://cssgridgarden.com/#ro">Română</a>
+            <a href="https://cssgridgarden.com/#al">Shqip</a>
+            <a href="https://cssgridgarden.com/#bg">Български</a>
+            <a href="https://cssgridgarden.com/#et">Eesti</a>
+            <a href="https://cssgridgarden.com/#lv">Latviešu</a>
+            <a href="https://cssgridgarden.com/#lt">Lietuvių</a>
+            <a href="https://cssgridgarden.com/#ru">Русский</a>
+            <a href="https://cssgridgarden.com/#ua">Українська</a>
+            <a href="https://cssgridgarden.com/#el">Ελληνικά</a>
+            <a href="https://cssgridgarden.com/#tr">Türkçe</a>
+            <a href="https://cssgridgarden.com/#az">Azərbaycanca</a>
+            <a href="https://cssgridgarden.com/#ar">العربية</a>
+            <a href="https://cssgridgarden.com/#fa">فارسی</a>
+            <a href="https://cssgridgarden.com/#ps">پښتو</a> 
+            <a href="https://cssgridgarden.com/#ur">اردو</a>
+            <a href="https://cssgridgarden.com/#hi">हिंदी</a>
+            <a href="https://cssgridgarden.com/#bn">বাংলা</a>
+            <a href="https://cssgridgarden.com/#ta">தமிழ்</a>
+            <a href="https://cssgridgarden.com/#zh-cn">简体中文</a>
+            <a href="https://cssgridgarden.com/#zh-tw">繁體中文</a>
+            <a href="https://cssgridgarden.com/#ja">日本語</a>
+            <a href="https://cssgridgarden.com/#ko">한국어</a>
+            <a href="https://cssgridgarden.com/#vi">Tiếng Việt</a>
+            <a href="https://cssgridgarden.com/#th">ภาษาไทย</a>
+            <a href="https://cssgridgarden.com/#id">Bahasa Indonesia</a>
+            <a href="https://cssgridgarden.com/#tl">Tagalog</a>
+            <a href="https://cssgridgarden.com/#yo">Yorùbá</a>
+          </span>
+        </span>
+      </div>
+      <div class="credits">
+        <span id="flexboxFroggy" class="translate">CSS flexbox를 배워볼려면? 여기를 클릭</span> <a href="https://codepip.com/games/flexbox-froggy/">Flexbox Froggy</a> or <a href="https://codepip.com/games/anchoreum/">Anchoreum</a>.
+      </div>
+    </section>
+    <section id="view">
+      <div id="board">
+        <div id="overlay" class="" style="grid-template-colums: repeat(8, 12.5%);">
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+        </div>
+        <div id="plants" class="grid-template-columns-repeat-8-12" style="grid-template-columns: repeat(8, 12.5%);"><div class="plant carrot"><div class="bg"></div></div></div>
+        <div id="garden" class="" style="grid-template-colums: repeat(8, 12.5%);"><div class="treatment carrot"><div class="bg"></div></div></div>
+        <div id="soil" class="" style="grid-template-colums: repeat(8, 12.5%);">
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+          <span class="plot"></span>
+        </div>
+      </div>
+    </section>
+    <script src="./Grid Garden - CSS grid 속성 배우기 게임_files/sdk.js.다운로드" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="./Grid Garden - CSS grid 속성 배우기 게임_files/sdk(1).js.다운로드"></script><script id="twitter-wjs" src="./Grid Garden - CSS grid 속성 배우기 게임_files/widgets.js.다운로드"></script><script async="" src="./Grid Garden - CSS grid 속성 배우기 게임_files/analytics.js.다운로드"></script><script src="./Grid Garden - CSS grid 속성 배우기 게임_files/jquery.min.js.다운로드"></script>
+    <script src="./Grid Garden - CSS grid 속성 배우기 게임_files/levels.js.다운로드"></script>
+    <script src="./Grid Garden - CSS grid 속성 배우기 게임_files/docs.js.다운로드"></script>
+    <script src="./Grid Garden - CSS grid 속성 배우기 게임_files/messages.js.다운로드"></script>
+    <script src="./Grid Garden - CSS grid 속성 배우기 게임_files/game.js.다운로드"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-23019901-18', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1820320434958041";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Grid Garden - CSS grid 속성 배우기 게임_files/widget_iframe.2f70fb173b9000da126c79afe2098f02.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Grid Garden - CSS grid 속성 배우기 게임_files/saved_resource.html"></iframe></body></html>

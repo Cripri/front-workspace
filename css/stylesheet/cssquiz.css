@@ -1,0 +1,549 @@
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: "Roboto", "Noto Sans KR", "PingFang SC", "Apple SD Gothic Neo", "Microsoft YaHei UI", "Malgun Gothic", sans-serif;
+    min-width: 1440px;
+    color: #000;
+}
+
+.btn_wrap.justify [class^=btn_] {
+    flex: 1;
+    min-width: auto;
+}
+
+button[class^=btn_], a[class^=btn_] {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.kbb-recent-contents *, :before, :after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #f2f2f2;
+}
+
+.prod_detail_view_wrap {
+    display: block;
+    margin-top: 18px;
+    word-break: break-all;
+}
+
+.div-with-line {
+    border-bottom: 1px solid #ccc; /* 회색 줄 */
+    padding: 10px 0;
+}
+
+.badge_list_box {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+}
+.badge_md
+ {
+    min-height: 22px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+}
+
+
+
+.badge_list_box {
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+
+.badge_line_primary {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: #e6f0ff;
+}
+
+.badge_line_gray {
+    border: 1px solid #ccc;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.prod_price_box .prod_price .percent {
+    display: inline-block;
+    margin-right: 6px;
+    color: #4dac27;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.prod_price_box .prod_price .price {
+    display: inline-block;
+    margin-right: 4px;
+    color: #000;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    vertical-align: top;
+}
+
+.prod_price_box .prod_price .sale_price {
+    display: inline-block;
+    margin-bottom: 2px;
+    color: #767676;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    vertical-align: bottom;
+}
+
+.prod_guide_wrap .prod_guide_box {
+    padding: 18px 0 16px;
+}
+
+.prod_guide_wrap .prod_guide_box .prod_guide_title {
+    flex: 0 0 auto;
+    color: #000;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+
+    .point_text {
+    display: inline-block;
+    color: #4dac27;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+[class^=ico_] {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: top;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tooltip_wrap .btn_tooltip {
+    display: inline-block;
+    position: relative;
+    width: 22px;
+    height: 22px;
+}
+
+button {
+    background-color: transparent;
+}
+
+.tooltip_wrap .btn_tooltip .ico_arw {
+    background-size: 22px 22px;
+    background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/arw_tooltip@2x.png);
+}
+
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    line-height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    font: 0 / 0 Arial;
+}
+
+input, button {
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+}
+
+.tooltip_wrap.type_info .tooltip_inner {
+    padding: 16px 17px 18px;
+    margin-top: 10px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+.tooltip_wrap.right .tooltip_inner {
+    left: auto;
+    right: 0;
+}
+
+.tooltip_wrap.active .tooltip_inner
+ {
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.prod_guide_wrap .tooltip_inner {
+    z-index: 11;
+}
+
+.tooltip_wrap .tooltip_inner {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 22px;
+    z-index: 10;
+    overflow: hidden;
+    width: 330px;
+    padding: 19px 19px;
+    margin-top: 6px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: left;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: opacity 0.3s ease-out;
+    visibility: hidden;
+}
+
+.prod_guide_box {
+    border-top: 1px solid #eaeaea;
+}
+
+.prod_guide_wrap .prod_guide_box {
+    padding: 18px 0 16px;
+}
+
+.prod_guide_wrap .prod_guide_box .prod_guide_row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.prod_guide_title {
+    flex: 0 0 auto;
+    color: #000;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+
+
+.delivery_guide_text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.tooltip_wrap .btn_tooltip .ico_info {
+    background-size: 22px 22px;
+    background-image: url('https://contents.kyobobook.co.kr/resources/fo/images/common/ink/btn_tooltip@2x.png');
+}
+
+.prod_guide_row {
+    margin-top: 9px;
+}
+
+.prod_guide_box .prod_guide_row.nonmember {
+    padding-top: 18px;
+    border-top: 1px solid #eaeaea;
+}
+
+.badge_sm.badge_pill {
+    padding: 3px 7px 0;
+    border-radius: 20px;
+    line-height: 1;
+    font-weight: 400;
+}   
+
+
+.badge_primary {
+    color: #474c98;
+    border: 1px solid #ededf7;
+    background: #ededf7;
+}
+
+.btn_info_popup {
+    margin: 2px 0 0 3px;
+}
+
+button[class^=btn_], a[class^=btn_] {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+}   
+
+.ico_question {
+    border: 1px solid #d5d5d5;
+    border-radius: 100%;
+    background: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/btn_tooltop_question_sm@2x.png) center no-repeat;
+    background-size: 16px 16px;
+}
+
+button[class^=btn_] [class^=ico_], a[class^=btn_] [class^=ico_] {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.prod_alarm_text
+ {
+    display: inline-block;
+    flex: 1;
+    color: #595959;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+button.btn_line_primary {
+    color: #474c98;
+    border: 1px solid #5055b1;
+    background: #fff;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+a.btn_xs .ico_alarm, button.btn_xs .ico_alarm {
+    width: 12px;
+    background: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_alarm_on@2x.png) left center no-repeat;
+    background-size: 12px 18px;
+}
+
+ .btn_wrap {
+    margin-top: 16px;
+}
+
+a.btn_line_gray, button.btn_line_gray {
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.right_area {
+    flex: 0 auto;
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.alarm_apply_box {
+    display
+: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    padding-top: 16px;
+    box-sizing: border-box;
+}
+
+
+.col_prod_info {
+    flex: 1 0 auto;
+    width: 330px;
+}
+
+a.btn_sm .ico_locate, button.btn_sm .ico_locate {
+    width: 14px;
+    background: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_locate@2x.png) left center no-repeat;
+    background-size: 13px 19px;
+}
+
+.col_prod_info .info_text_box
+ {
+    margin-top: 30px;
+}
+
+.info_text_box {
+    display: block;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+}
+
+.title_wrap.title_size_xs {
+    padding-bottom: 10px;
+}
+
+.title_wrap {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.ico_speech {
+    margin: 2px 4px 0 0;
+}
+
+.ico_speech {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-image: url(https://contents.kyobobook.co.kr/resources/fo/images/common/ink/ico_title_message@2x.png);
+    vertical-align: top;
+}
+
+.title_heading {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.info_text.font_size_xxs {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #595959;
+}
+
+.btn_wrap {
+    display: block;
+    font-size: 0;
+    text-align: center;
+}
+
+.btn_wrap.justify {
+    display: flex
+;
+}
+
+.tooltip_wrap {
+    margin-left: 7px;
+}
+
+.tooltip_wrap .btn_tooltip {
+    display: inline-block;
+    position: relative;
+    width: 22px;
+    height: 22px;
+}
+
+.tooltip_wrap {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.point_text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prod_guide_cont {
+    flex: 1;
+    max-width: 100%;
+    margin-left: auto;
+    color: #000;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.01em;    
+    text-align: right;
+}
+
+button.btn_xs {
+    display: -ms-inline-flexbox;
+    display: inline-flex
+;
+    display: -webkit-inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    height: 30px;
+    padding: 0 9px 1px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+}

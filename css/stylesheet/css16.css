@@ -1,0 +1,277 @@
+.flex-box{
+    display: flex;
+    background-color: skyblue;
+    padding: 5px;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.flex-box > *{
+    background-color: rgb(242, 251, 255);
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    margin: 5px;
+}
+
+.flex-direction-row{
+    flex-direction: row;
+}
+
+.flex-direction-row-reverse{
+    flex-direction: row-reverse;
+}
+
+.flex-direction-column{
+    flex-direction: column;
+}
+
+.flex-direction-column-reverse{
+    flex-direction: column-reverse;
+}
+
+#mywebsite{
+    width: 800px;
+    color: white;
+    font-size: 20px;
+}
+
+#mywebsite > header {
+    background-color:  darkred;
+    height: 150px;
+    
+}
+
+#mywebsite > nav{
+    background-color: darkslateblue;
+    height: 100px;
+    display: flex;
+    padding: 5px;
+}
+
+#mywebsite > nav > div{
+    background-color: rgb(137, 128, 197);
+    margin: 5px;
+    display: flex;;
+    width: 90px;
+}
+
+#mywebsite > main {
+    display: flex;
+    height: 500px;
+}
+
+#newsstand{
+    background-color: darkgray;
+    width: 80%;
+}
+
+#newsstand  > article {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 85%;
+}
+
+
+#newsstand > section{
+    background-color: gold;
+    height: 15%;
+}
+
+#mywebsite > main > aside{
+    background-color: darkolivegreen;
+    width: 20%;
+}
+
+#mywebsite > footer {
+    background-color: darksalmon;
+    height: 100px;
+}
+
+.slash {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.slash::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    width: 1px;
+    height: 15px;
+    background-color: rgb(201, 193, 193);
+    transform: skewX(-15deg);
+}
+
+.dot{
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.dot::before {
+    content: "·";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    color: #888;
+    font-size: 16px; 
+}
+
+
+.category{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.category > *{
+    position: relative;
+    display: inline-block;
+    font-size: 1.0rem;
+    line-height: 23px;
+    font-weight: 500;
+    vertical-align: top;
+    color: #e3e5e8;
+    -webkit-font-smoothing: antialiased;
+}
+
+.sports_category{
+    background-color: #f5f7f8;
+    color: black;
+    font-size: 0.6rem;
+    position: relative;
+    display: flex;
+    padding: 12px 20px;
+    border-radius: 4px;
+    line-height: 13px;
+}
+
+.sports_category > div:last-child {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.news-wrapper{
+    
+}
+
+.news-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.news-thumb img {
+  width: 185px;
+  height: 104px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.news-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.news-meta {
+  font-size: 10px;
+  color: #666;
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.comment {
+  margin-left: auto;
+  font-weight: bold;
+  color: #3b74d8;
+}
+.news-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.news-right li a {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+.news-left li a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-left {
+  width: 50%;
+}
+
+.news-right {
+  width: 50%;
+}
+
+.news-right ul {
+    margin: 0;
+    padding: 0;
+}
+
+.news-right li {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    list-style: none;
+}
+
+.news-right a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.news-right .textnews {
+  color: #666;
+  font-size: 0.6rem;
+  margin-left: auto;
+}
+

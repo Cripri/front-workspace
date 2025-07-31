@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th{
+            background-color: tomato;
+        }
+
+        td {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h3># 웹 페이지에 표 출력하기</h3>
+
+    <p>
+        - table : 표의 전체 범위를 지정하는 태그 <br>
+        - tr : table row, 해당 표에 한줄을 추가하는 태그 <br>
+        - th : table header, 해당 줄에 재목 칸을 추가하는 태그 <br>
+        - td : table data, 해당 줄에 일반 칸을 추가하는 태고 <br>
+    </p>
+
+    <hr>
+
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td>김상덕</td>
+            <td>010-1234-1234</td>
+            <td>서울시 무슨구 무슨동 무슨무슨길 12345</td>
+        </tr>
+        <tr>
+            <td>빌 게이츠</td>
+            <td>010-3233-3432</td>
+            <td>서울시 노원구 ...</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h3>성적표</h3>
+
+    <table border="3">
+        <tr>
+            <th>이름</th>
+            <th colspan="5">점수</th> <!--colspan : 이 칸이 차지하는 열의 개수 설정-->
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>90</td>
+            <td>88</td>
+            <td>76</td>
+            <td>98</td>
+            <td>95</td>
+        </tr>
+    </table>
+
+    <h3>이력서</h3>
+
+    <table border="3">
+        <tr>
+            <th rowspan="4">학력</th> <!--rowspan : 이 칸이 차지하는 행의 개수 설정-->
+            <td>무슨무슨 대학</td>
+            <th rowspan="4">자격증</th>
+            <td>컴퓨터활용능력 1급</td>
+        </tr>
+        <tr>
+            <td>무슨고등학교</td>
+            <td>정보처리산업기사</td>
+        </tr>
+        <tr>            
+            <td>어쩌구 중학교</td>
+            <td>운전면허(1종 보통)</td>
+        </tr>
+        <tr>            
+            <td>어쩌구 초등학교</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table border="3">
+        <tr>
+            <th colspan="6">Time Table</th>
+        </tr>
+        <tr>
+            <th rowspan="6">Hours</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td>Maths</td>
+            <td>Science</td>
+            <td>Maths</td>
+            <td>Arts</td>
+        </tr>
+        <tr>
+            <td>Social</td>
+            <td>History</td>
+            <td>English</td>
+            <td>Social</td>
+            <td>Sports</td>
+        </tr>
+        <tr>
+            <th colspan="5">Lunch</th>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td>Maths</td>
+            <td>Science</td>
+            <td>Maths</td>
+            <td rowspan="2">Project</td>
+        </tr>
+        <tr>
+            <td>Social</td>
+            <td>History</td>
+            <td>English</td>
+            <td>Social</td>
+        </tr>
+        
+    </table>
+
+    
+</body>
+</html>

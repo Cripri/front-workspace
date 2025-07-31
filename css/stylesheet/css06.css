@@ -1,0 +1,66 @@
+.margin-test-box, [id *="padding-box"]{
+    width: 500px;
+    height: 200px;
+    border: solid 3px black;
+    font-size: 50px;
+}
+
+[id *= "padding-box"]{
+    font-size: 1.0rem;
+    text-align: justify;
+}
+
+.margin-test-box:first-of-type{
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-top: 150px;
+}
+
+#padding-box1{
+    padding: 50px;
+}
+
+#padding-box2{
+    padding: 50px 100px;
+}
+
+
+.margin-test-box:nth-of-type(2){
+    margin: 100px auto;
+}
+
+.margin-test-box:nth-of-type(3){
+    margin: 30px 150px 50px 100px;
+}
+
+.padding-box:first-of-type{
+    padding: 50px;
+}
+
+#box1{
+    /*
+        box-sizing: content-box (기본값)
+        width와 height 속성이 content-box의 크기를 설정하게 됨
+    */
+    box-sizing: content-box;
+    width: 100px;
+    height: 100px;
+
+    border: solid 15px black;
+    padding: 30px;
+    margin: 10px auto;
+}
+
+#box2{
+    /*
+        box-sizing: border-box;
+        width와 height 속성이 요소의 전체 크기를 설정하게됨    
+    */
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+
+    border: solid 15px black;
+    padding: 30px;
+    margin: 10px auto;
+}

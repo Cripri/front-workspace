@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 20px;
+        }
+
+        /* tabName으로 선택*/
+        ul{
+            border: solid 3px black;
+            padding: 3px;
+            padding-left: 25px;
+            list-style-type: none;
+        }
+        /* .className으로 선택 */
+        .menu {
+            border: solid 3px orange;
+            margin: 3px;
+            padding: 3px;
+        }
+
+        /* #id로 선택 */
+        #coke{
+            background-color:  rgb(177, 11, 11);
+            font-size: 35px;
+        }
+
+        #sprite{
+            background-color: green;
+            color: white;
+        }
+
+        #fanta{
+            background-color: orange;
+        }
+        
+        /* 더 나중에 나온 스타일이 먼저 나온 스타일을 덮어쓰게 된다*/
+        .drink{
+            border-color: black;
+        }
+
+        .dessert{
+            border-color: chocolate;
+        }
+
+        #sprite, #fanta{
+            border-style: dashed;
+        }
+
+        .fruit{
+            width: 100px;
+            height: 100px;
+            border: solid 3px black;
+            margin : 5px;
+            border-radius: 15px;
+        }
+
+        #doma .banana{
+            background-color: gold;
+        }
+
+        /*연습 : 테이블 위에 있는 오렌지는 오렌지색으로 변경하고 
+        테이블 위의 박스 안에 들어있는 오렌지는 좀더 진한 오랜지색으로 변경*/
+        
+        #table .orange{
+            background-color:  orangered;
+        }
+
+        #table > .orange{
+            background-color: orange;
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+
+    <h3># CSS 선택자 (Selectors)</h3>
+
+    <ul>
+        <li>태그이름: 해당 태그 이름을 가진 모든 요소를 선택</li>
+        <li>#아이디: 해당 ID속성 값을 지닌 요소를 선택 (하나만 선택)</li>
+        <li>.클래스: 해당 class속성 값을 지닌 모든 요소를 선택(여러개 선택)</li>
+        <li>* : 모든 요소 선택</li>
+        <li>, : 여러개의 선택자를 사용</li>
+        <li>>: 왼쪽 요소의 자식 요소인 오른쪽 요소를 선택</li>
+        <li>공백 : 왼쪽 요소의 자손 요소인 오른쪽 요소들을 선택</li>
+    </ul>
+
+    <!--
+        id: 이 웹페이지 내에서 하나의 요소를 선택할 수 있는 속성 값
+        class :  해당 요소가 오느 그룹에 속해있느닞를 표현할 수 있는 속성 값
+    -->
+
+    <ul>
+        <li id="coke" class="drink menu">콜라</li>
+        <li id="sprite" class="drink menu">사이다</li>
+        <li id="fanta" class="drink menu">환타</li>
+        <li id="cake" class="dessert menu">치즈 케이크</li>
+        <li id="cake" class="dessert menu">초코 케이크</li>
+    </ul>
+
+    <ul id="doma">
+        <li class="apple fruit">사과</li>
+        <li class="banana fruit">바나나</li>
+        <li class="orange fruit">오렌지</li>
+        <ul class="box">
+            <li class="apple fruit">사과</li>
+            <li class="banana fruit">바나나</li>
+            <li class="orange fruit">오렌지</li>
+        </ul>
+    </ul>
+    
+    <ul id="table">
+        <li class="apple fruit">사과</li>
+        <li class="banana fruit">바나나</li>
+        <li class="orange fruit">오렌지</li>
+        <ul class="box">
+            <li class="apple fruit">사과</li>
+            <li class="banana fruit">바나나</li>
+            <li class="orange fruit">오렌지</li>
+        </ul>
+    </ul>
+
+</body>
+</html>

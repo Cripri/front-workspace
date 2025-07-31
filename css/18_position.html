@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheet/css18.css">
+</head>
+<body>
+
+    <h3># position property</h3>
+
+    <ul>
+        <li>position 속성을 설정한 요소는 다른 요소들을 무시하면서 마음대로 배치할 수 있게 된다
+            (3차원적인 요소가 된다)
+        </li>
+        <li>
+            position을 설정한 요소끼리는 높고 낮음을 정할 수 있다
+        </li>
+        <li>static: 포지션을 설정하지 않은 상태</li>
+        <li>absolute: 절대적인 위치를 설정</li>
+        <li>relative: 상대적인 방식으로 위치를 설정</li>
+        <li>fixed: 화면에 특정 부분에 고정될 위치를 설정</li>
+        <li>sticky: 원래 자리에 있다가 최종적으로 고정될 위치를 설정</li>
+        <li>
+            포지션 속성을 설정한 후에 (top, bottom, left, right)속성을 통해
+            해당 요소의 위치를 결정할 수 있다
+        </li>
+    </ul>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+    <div id="sticky-bar">Sticky Bar</div>
+
+    <div id="text">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Vel maiores, labore, quibusdam beatae dignissimos provident, 
+        eaque ducimus porro enim officia sapiente at laudantium nisi ipsam 
+        optio totam illo ullam impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Accusamus recusandae aliquid sunt tenetur suscipit ipsam! Minus aperiam eum provident
+        porro eaque, omnis tenetur nobis quidem incidunt tempora
+        , magni perspiciatis aliquid.
+    </div>
+
+    <h3># position: absolute</h3>
+
+    <ul>
+        <li>absolute가 설정된 해당 요소의 부모 요소를 기준으로 절대적인 위치를 설정한다</li>
+        <li>
+            모든 부모 요소에 position이 설정되어 있지 않다면(static이라면)
+            화면을 기준으로 절대적인 위치를 설정한다
+        </li>
+    </ul>
+
+    <h3># position: relative</h3>
+
+    <ul>
+        <li>해당 요소가 원래 있어야 하는 위치로부터의 위치를 설정한다</li>
+        <li>
+            position: absolute는 본인이 원래 차지하고 있던 영역을 잃어버리지만
+            position: relative는 본인의 영역을 유지한다
+        </li>
+    </ul>
+
+    <h3># position: fixed</h3>
+
+    <ul>
+        <li>화면에서 항상 고정된 위치를 차지하는 요소가 된다</li>
+
+    </ul>
+
+    <h3># position: sticky</h3>
+
+    <ul>
+        <li>relative인척 하다가 fixed로 동작</li>
+    </ul>
+
+    <div id="box3">
+        <div id="box3-1"></div>
+        <div id="box3-2"></div>
+    </div>
+
+    <div id="aside">
+        <div>메뉴</div>
+        <div>소개</div>
+        <div>지도</div>
+        <div>등등</div>
+    </div>
+
+</body>
+</html>

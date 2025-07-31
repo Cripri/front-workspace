@@ -1,0 +1,33 @@
+[id^="font"]{
+    font-size: 25px;
+    padding: 5px;
+}
+
+#font-test1{
+    /*앞에 나온 글꼴을 못 찾은 경우 \뒤의 글꼴을 저장한다 */
+    font-family: '궁서체', '맑은 고딕', '바탕체';
+}
+
+#font-test2{
+    font-family: "Bitcount", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 363;
+    font-style: normal;
+    font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+#font-test3{
+    font-family: "Gamja Flower", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#font-test4{
+    font-family: "Moirai One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}

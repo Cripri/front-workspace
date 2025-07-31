@@ -1,0 +1,38 @@
+[id^="shadow"]{
+    font-size:  30px;
+    padding: 5px;
+
+}
+
+#shadow2{
+    color: white;
+    text-shadow: 0px 3px 10px black;
+}
+
+#shadow2{
+    color: white;
+    text-shadow: 0px 3px 10px black,
+                 2px 2px 5px red,
+                 3px 3px 3px blue;
+}
+
+#shadow3{
+    text-shadow: 2px 2px #23036a,
+                 4px 4px #3700b3,
+                 6px 6px #6200ee, 
+                 8px 8px #7f39fb, 
+                 10px 10px #985eff;
+}
+
+#shadow4{
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    box-shadow: 2px 2px #23036a,
+                 4px 4px #3700b3,
+                 6px 6px #6200ee, 
+                 8px 8px #7f39fb, 
+                 10px 10px #985eff;
+    margin: 50px;
+    background-color: beige;
+}

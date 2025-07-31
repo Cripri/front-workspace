@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheet/css15.css">
+</head>
+<body>
+
+    <h3># display property</h3>
+
+    <ul>
+        <li>웹 브라우저가 해당 요소를 어떤 방식으로 그려야하는지 결정하는 속성</li>
+        <li>대부분의 HTML 태그들은 기본적으로 display 속성이 block 또는 inline으로 설정되어 있다</li>
+
+    </ul>
+    
+    <h3># block 요소</h3>
+
+    <ul>
+        <li>너비가 남더라고 항상 한 줄을 모두 차지한다</li>
+        <li>기본적으로 설정된 width는 100%이다</li>
+        <li>padding 과 gargin을 적용할 수 있다</li>
+        <li>박스 취급을 당하는 요소이다</li>
+        <li>
+            ex> div, p , h, ul, ol, dl, dd, dt, li, ... 등의 태그들은기본 display 속성이 block이다
+        </li>
+    </ul>
+
+    <div class="dialog-box" >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        A unde placeat rerum architecto debitis temporibus vero quo alias maiores 
+        esse doloribus doloremque nisi veritatis aliquid quidem sequi fugit, non similique.
+    </div>
+
+    <h3 style="width: 200px;"># inline 요소</h3>
+
+    <ul>
+        <li>영역을 지정하더라고 글의 내용을 해치지 않는다</li>
+        <li>글 내용에서 특정 부분을 선택하기 위한 용도로 많이 사용한다</li>
+        <li>padding과 margin이 올바르게 적용되지 않는다</li>
+        <li>박스 취급이 아닌 글자 취급을 당한다</li>
+        <li>ex> span, b, a, i, ...등은 기본 display 속성이 inline이다</li>
+    </ul>
+
+    <div class="dialog-box block-test" >
+        Lorem ipsum <span>dolor sit</span> amet consectetur adipisicing elit. 
+        A unde placeat rerum <span>architecto</span> debitis temporibus vero quo alias maiores 
+        esse doloribus doloremque nisi veritatis aliquid <span>quidem sequi</span> fugit, non similique.
+    </div>
+
+    <h5>inline 속성 요소는 padding과 gargin이 바람직하지 않게 어쩌구</h5>
+    <div class="dialog-box inline-test" >
+        Lorem ipsum <span>dolor sit</span> amet consectetur adipisicing elit. 
+        A unde placeat rerum <span>architecto</span> debitis temporibus vero quo alias maiores 
+        esse doloribus doloremque nisi veritatis aliquid <span>quidem sequi</span> fugit, non similique.
+    </div>
+
+    <h5>
+        # block과 inline의 장점을 합친 inline-block 속성이 있다
+        (padding과 margin이 제대로 적용되면서 글 내용도 해치지 않음)
+    </h5>
+    <div class="dialog-box inline-block-test" >
+        Lorem ipsum <span>dolor sit</span> amet consectetur adipisicing elit. 
+        A unde placeat rerum <span>architecto</span> debitis temporibus vero quo alias maiores 
+        esse doloribus doloremque nisi veritatis aliquid <span>quidem sequi</span> fugit, non similique.
+    </div>
+
+    <h3># display: none</h3>
+
+    <ul>
+        <li>해당 요소를 그리지 않는다</li>
+        <li>해당 요소가 차지하고 있던 영역도 사라진다</li>
+    </ul>
+
+    <div id="none-test">
+        <div class="on">1</div>
+        <div class="on">2</div>
+        <div class="on">3</div>
+        <div class="on">4</div>
+    </div>
+
+    <button id="none-test-button" onclick="clickHandler();">button</button>
+
+    <h3># visibility: hidden</h3>
+
+    <ul>
+        <li>해당 요소를 안보이게 설정한다</li>
+        <li>해동 요소가 차지하고 있던 영역이 그대로 유지된다</li>
+    </ul>
+
+    <div id="visiblity-test">
+        <div class="on">1</div>
+        <div class="on">2</div>
+        <div class="on">3</div>
+        <div class="on">4</div>
+    </div>
+
+    <button id="visiblity-test-button" onclick="clickHandler2();">button</button>
+
+    <script>
+        const firstDiv = document.querySelector('#none-test > :first-child');
+        //const testButton = document.getElementById('none-test-button');
+
+        function clickHandler(){
+            if(firstDiv.className == 'on'){
+                firstDiv.className = 'off';
+            }else if(firstDiv.className == 'off'){
+                firstDiv.className = 'on';
+            }
+        }
+        
+        const to_hide = document.querySelector('#visiblity-test > :nth-child(3)');
+
+        function clickHandler2(){
+            if(to_hide.className == 'on'){
+                to_hide.className = 'off';
+            }else if(to_hide.className == 'off'){
+                to_hide.className = 'on';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

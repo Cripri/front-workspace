@@ -1,0 +1,63 @@
+div {
+    border: solid 3px black;
+    height: 200px;
+    margin-bottom : 50px;
+}
+
+div:first-of-type {
+    background-image : url("../images/다운로드.jpg");
+    /*
+        # background-size 
+
+        설정 안함 : 원본 이미지 크기를 그대로 사용한다
+        직접 설정 : 가로 세로
+        contain : 해당 요소 안에 이미지가 모두 포함될 수 있는 크기로 설정
+        cover : 이미지로 해당 요소를 모두 덮을 수 있는 크기
+    */
+    background-size : 50px 50px;
+    /*
+        # background-repeat
+
+        repeat : 반복하기 (기본값)
+        repeat-x : 가로로만 반복하기
+        repeat-y : 세로로만 반복하기
+        no-repeat : 반복 안함
+    */
+    background-repeat: repeat-x;
+    /*
+        # background-position
+
+        직접 설명 : x축 y축
+        center, top, bottom, left, right를 모두 조합하여 사용할 수 있다
+    */
+    background-position: center;
+}
+
+div:nth-of-type(2){
+    background-image: url("../images/다운로드.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div:nth-of-type(3){
+    background-color: aqua;
+        
+}
+
+div:last-of-type{
+    background-image: url("../images/다운로드.jpg");
+    background-size: 100px 100px    ;
+    background-repeat:repeat;
+}
+
+#cafe-button{
+    background-image: url("../images/sp_main.png");
+    background-repeat: no-repeat;
+    background-position: -70px -440px;
+
+    border: none;
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    background-color: beige;
+}

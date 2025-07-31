@@ -1,0 +1,93 @@
+body{
+    border: solid 1px green;
+}
+
+#text {
+    font-size: 20px;
+    width: 800px;
+    padding: 8px;
+    margin: 10px;
+    border: solid 3px black;
+    text-align: justify;
+    position: relative;
+    z-index: -2;
+}
+
+#box1{
+    width: 150px;
+    height: 150px;
+    background-color: darkred;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: -1;
+}
+
+#box2{
+    width: 150px;
+    height: 150px;
+    background-color: darkgoldenrod;
+    position: relative;
+    left: 100px;
+    top: 100px;
+    z-index: -3;
+}
+
+[id^="box3"]{
+    box-sizing:  border-box;
+    border: solid 3px black;
+    width: 150px;
+    height: 150px;;
+}
+
+#box3{
+    width: 800px;
+    height: 400px;
+    position: relative;
+}
+
+#box3-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: darkolivegreen;
+    z-index: 3;
+}
+
+#box3-2{
+    position: relative;
+    top: 50px;
+    left: 100px;
+    background-color: darkkhaki;
+}
+
+#aside{
+    height: 50%;
+    background-color: darkturquoise;
+    width: 80px;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+#aside > div{
+    box-sizing: border-box;
+    color: white;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    background-color: rgb(22, 88, 82);
+}
+
+#sticky-bar{
+    box-sizing: border-box;
+    height: 80px;
+    width: 100%;
+    background-color: darkorange;
+    position: sticky;
+    text-align: right;
+    padding-right: 3px 83px 3px 3px;
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}

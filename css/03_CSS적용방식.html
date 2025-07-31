@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .description{
+            color: aqua;
+        }
+    </style>
+    <style>
+        .description{
+            color: salmon;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/stylesheet/css03.css">
+</head>
+<body>
+    <h3># 웹 페이지에 CSS를 적용하는 방법 3가지</h3>
+
+    <dl>
+        <dt style="color: green ;">1. inline CSS</dt>
+        <dd>
+            - 해당 요소의 style 속성에 스타일을 직접 정의하는 방식 <br>
+            - CSS 적용 우선 순위가 가장 높다 <br>
+        </dd>
+        <dt>2. internal CSS</dt>
+        <dd class="description">
+            - 같은 파일의 head에 style 태그로 스타일시트를 직접 정의하는 방식 <br>
+            - 더 나중에 작성한 스타일시트가 우선 순위를 가지게 된다 <br>
+
+        </dd>
+        <dt>3. external CSS</dt>
+        <dd class="description">
+            - 다른 SCC파일을 현재 웹 페이지로 불러서 사용하는 방식 <br>
+            - link 태그를 사용해 외부의 SCC파일을 현재 페이지엣 연결한다 <br>
+            - 우선 순위는 internal CSS와 같다 <br>
+        </dd>
+    </dl>
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 18px;
+}
+
+.text-align-test{
+    border: solid 1px black;
+    padding: 0.5rem;
+}
+
+#ex1{
+    padding-left:  20px ;
+}

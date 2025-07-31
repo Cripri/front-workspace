@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3># 다른 웹 페이지로 이동할 수 있게 링크 걸기</h3>
+
+    <p>
+        - a 태그 사용해 링크 걸기 <br>
+        - 자바스크립트로 링크 걸기 <br>
+
+    </p>
+
+    <h3># a태그 사용하기</h3>
+
+    <p>- a 태그의 href 속성에 원하는 url을 적어서 사용</p>
+
+    <p>
+        - 자세한 내용이 궁금하다면 여기<a href="https://google.com">여기</a>를 클릭하세요 <br>
+        - a 태그를 누르면 웹 브라우저의 주소창에 href 속성에 적힌 값을 입력하는 효과가 있다 <br>
+        - <a href="google.com">구글가기1(google.com)</a> <br>
+        - <a href="./google.com">구글가기2(./google.com)</a> <br>
+        - <a href="/google.com">구글가기3(/google.com)</a> <br>
+        - <a href="//google.com">구글가기4(//google.com)</a> <br>
+        - <a href="http://google.com">구글가기5(http://google.com)</a> <br>
+
+    </p>
+
+    <h3># 웹에서 사용할 수 있는 상대 경로의 종류 (./,/,//)</h3>
+
+    <p>
+        - 
+    </p>
+
+    <p>
+        - https://comic.naver.com/webtoon/list?titleId=821793를 기준으로 <br>
+        - href="naver.com"은 https://comic.naver.com/webtoon/naver.com 의미한다 <br>
+        - href="/naver.com"은 https://comic.naver.com/naver.com <br>
+        - href="//naver.com"은 https://naver.com <br>
+    </p>
+
+    <h3>다른 페이지로 링크 걸어보기</h3>
+
+    <p>
+         해당 요소의 id속성을 활용해 해당 페이지의 특정 부분으로 링크를 걸 수 있다
+        <a href="frankenstein.html#chap1">챕터1</a>
+        <a href="frankenstein.html#chap1">챕터1</a>
+        <a href="frankenstein.html">프랑켄슈타인</a>
+        <a href="frankenstein.html#chap1">챕터1</a>
+        <a href="frankenstein.html#chap2">챕터2</a>
+        <a href="frankenstein.html#chap3">챕터3</a>
+        <a href="frankenstein.html#chap4">챕터4</a>
+    </p>
+
+    <h3># 자바스크립트 사용해 링크 걸기</h3>
+    
+    <p>자바스크립트를 활용하면 꼭 a 태그가 아니더라도 링크를 걸 수 있다</p>
+
+    <div
+    style="
+        border: solid 3px black;
+        background-color: red;
+        color: white;
+        font-size: 25px;
+        width: 200px;
+        height: 200px;"
+        onclick="location.href='https://google.com';" >
+Click!
+    </div>
+
+</body>
+</html>

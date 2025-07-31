@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+}
+
+.article{
+    border: solid 3px black;
+    padding: 10px;
+}
+
+.article-img{
+    width: 300px;
+    height: auto;
+}
+
+.float-left{
+    float: left;
+    margin-right: 10px;
+}
+
+.float-right{
+    float: right;
+    margin-left:  10px;
+}
+
+#float-box1{
+    border: 1px solid black;
+}
+
+#float-box1 > img{
+    width: 200px;
+    height: auto;
+    border: 1px solid black;
+}
+
+#float-image1{
+    float: left;
+}
+
+#float-image2{
+    float: left;
+}
+
+#float-image3{
+    float: left;
+}
+
+#float-box2{
+    width: 100%;
+    margin: auto;
+}
+
+#float-box2 > div{
+    float: left;
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#float-box2 > div:first-child{
+    background-color: salmon;
+    height: 150px;
+    width: 100%;
+    line-height: 150px;
+}
+
+#float-box2 > div:nth-child(2){
+    background-color: linen;
+    height: 500px;
+    width: 15%;
+    line-height: 500px;
+}
+
+#float-box2 > div:nth-child(3){
+    background-color: peru;
+    height:  500px;
+    width: 70%;
+    line-height: 500px;
+}
+
+#float-box2 > div:nth-child(4){
+    background-color: darkcyan;
+    height: 500px;
+    width: 15%;
+    line-height: 500px;
+}
+
+#float-box2 > div:nth-child(5){
+    background-color: cornflowerblue;
+    height: 150px;
+    width: 100%;
+    line-height: 150px;
+}
+
+/* float을 clear하기 위해 ::after 가상요소를 사용할 수 있다*/
+#float-box2::after{
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+.float-item{
+    width: 20%;
+    height: 100px;
+    line-height: 98px;
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 10px;
+    font-size: 50px;
+}
+
+#book_info{
+    width: 330px;
+    background-color: linen;
+}
+
+#book_info > div{
+    float: left;
+}
+
+.badge_list_box{
+    width: 100%;
+    line-height: 1.6em;
+    user-select: none;
+}
+
+
+.badge_list_box > b{
+    font-weight: 400;
+    border: solid 1px black;
+    font-size: 0.8em;
+    padding: 1px 3px;
+    border-radius: 4px;
+}
+
+.badge_list_box > b.badge_line_navy{
+    color: slateblue;
+    border-color: slateblue;
+}
+
+.badge_list_box > b.badge_line_gray{
+    color: gray;
+    border-color: gray;
+}
+
+.price_box{
+    width: 100%;
+    margin-top: 30px;
+    word-spacing: 0.9em;
+}
+
+.price_box > b.percent{
+    color: #4dac27;
+    font-size: 1.4em;
+}
+
+.price_box > b.sale_price{
+    font-size: 1.4em;
+}
+
+.price_box > b.price{
+    color: gray;
+    text-decoration: line-through;
+    font-weight: 400;
+}

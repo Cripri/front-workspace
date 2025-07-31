@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+#link{
+    text-align: center;
+    text-decoration: none;
+    border: 5px solid black;
+    width: 100px;
+    height: 60;;
+    display: block;
+    margin: 10px;
+    padding: 5 15px;;
+    font-size: 30px;
+    color: white;
+    background-color: red;
+}
+
+#link:link{
+    background-color: blue;
+}
+
+
+#link:visited{
+    background-color: green;
+}
+
+#link:hover{
+    background-color: brown;
+}
+
+/*active는 hover보다 밑에 있어야 제대로 적용된다..*/
+#link:active{
+    background-color: gold;
+}
+
+#icons {
+    border: solid 3px black;
+    width: 806px;
+}
+
+#icons >i {
+    width: 80px;
+    height: 80px;
+    color: gold;
+    font-size: 75px;
+    text-align: center;
+    line-height: 80px;
+    background-color: black;
+}
+
+#icons > i:first-child{
+    text-shadow: 0 0 5px white,
+                 0 0 8px white,
+                 0 0 15px red;
+    color: red;
+
+}
+
+#icons > i:nth-child(even){
+    text-shadow: 0 0 5px white,
+                 0 0 8px white,
+                 0 0 15px white;
+}
+
+#icons > i:nth-child(odd){
+    text-shadow: 0 0 5px white,
+                 0 0 8px white,
+                 0 0 15px white;
+    color: lime;
+}
+
+
+#icons > i:last-child{
+    text-shadow: 0 0 5px white,
+                 0 0 8px white,
+                 0 0 15px red;
+    color: rgb(155, 197, 145);
+
+}

@@ -1,0 +1,28 @@
+#text{
+    width: 500px;
+    font-size: 15px;
+    text-align: justify;
+    text-indent: 1em;
+}
+
+#text::first-letter{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#text::first-line{
+    color: red;
+}
+
+#text::selection{
+    background-color: black;
+    color: lime;
+}
+
+#text::before{
+    content: "Hello!";
+}
+
+#text::after{
+    content: "Element End!";
+}
