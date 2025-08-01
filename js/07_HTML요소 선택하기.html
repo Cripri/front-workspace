@@ -46,6 +46,18 @@
 
     </ul>
 
+    <h3># 선택한 HTML요소로 활용할 수 있는 메서드</h3>
+
+    <ul>
+        <li>element.click() : 클릭한 효과를 낼 수 있다</li>
+        <li>element.focus() : 해당 요소로 포커스를 이동한다</li>
+        <li>element.blur() : 해당 요소에서 포커스를 제외한다</li>
+        <li>element.getAttribute(name) : 해당 요소의 속성 값을 리턴한다</li>
+        <li>element.setAttribute(name, value) : 해당 요소의 속성값을 설정한다</li>
+        <li>element.removeAttribute(name) : 해당 요소의 해당 속성을 삭제한다</li>
+        <li>element.addEventListener(eventm callback) : 해당 요소에 원하는 이벤트를 설정한다</li>
+    </ul>
+
     <img id="penguin_image">
 
     <div id = "menu_wrap">
@@ -55,6 +67,22 @@
         <div>이탈리안 BLT</div>
         <div class="important bg-yellow">부대찌개</div>
     </div>
+
+    <h3>구구단</h3>
+
+    <div id="gugudan"></div>
+
+    <div id="gugudan2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <script>
         // 원하는 HTML요소를 선택해서 가져온 후에는 모든 속성을 자바스크립트로 수정할수있다
         const penguin_image = document.getElementById('penguin_image');
@@ -65,6 +93,23 @@
         penguin_image.src = '../css/images/다운로드.jpg';
         penguin_image.alt = '그림';
         penguin_image.width = '150';
+
+        console.log(penguin_image.src);
+
+        // 해당 인스턴스의 필드를 메서드로 다루는 방식
+        console.log(penguin_image.getAttribute('src'));
+        penguin_image.setAttribute('src','../css/images/다운로드.jpg');
+        penguin_image.removeAttribute('width');
+        penguin_image.style.width = '200px';
+
+        function clickAppleEvent() {
+            console.log(' /)/)');
+            console.log('(  ..)');
+            console.log('(  >$)');
+        };    
+
+        penguin_image.addEventListener('click', clickAppleEvent);
+
         let count = 1;
         penguin_image.onclick = function(){
             console.log('펭귄을' + count++  +  '번째로 눌렀습니다');
@@ -109,6 +154,40 @@
         // classList.toggle(string) : 있으면 없애고, 없으면 추가한다
         menus[4].classList.toggle('on');
         menus[4].classList.toggle('on');
+
+        const gugu = document.getElementById('gugudan');
+
+        gugu.style.width = '200px';
+        gugu.style.textAlign = 'center';
+        gugu.style.fontSize = '15px';
+        gugu.style.color = 'black';
+        gugu.style.backgroundColor = 'gold';
+        gugu.style.padding = '10px';
+
+        for(i = 2; i < 10; i++){
+            gugu.innerHTML += '<div>' + i + '단' + '</div> <br>';
+            for(j = 1; j < 10; j++){
+                let g = i + '*' + j + '=' + i * j;
+                gugu.innerHTML += '<div>' + g + '</div>';
+                gugu.innerHTML += '<br>';
+            }
+            gugu.innerHTML += '<hr>'
+        }   
+        
+        const gugudanDivs = document.querySelectorAll('#gugudan2 > div');
+
+        for(let i = 0; i < gugudanDivs.length; i++){
+            const guguDiv = gugudanDivs[i];
+
+            let dan = i + 2;
+
+            for(let gop = 1; gop <= 9; gop++){
+                //guguDiv.innerHTML += dan + 'x' + gop + '=' + dan * gop + '<br>';
+                // 자바스크립트의 format string 
+                guguDiv.innerHTML += `${dan} x ${gop} = ${dan * gop}<br>`;
+            }
+        }
+
     </script>
 </body>
 </html>

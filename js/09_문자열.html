@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_문자열.html</title>
+    <style>
+
+        body {
+            background-color: black;
+            color:white;
+        }
+
+        #out {
+            background-color: black;
+            color : lime;
+            padding : 10px;
+            letter-spacing: 10px;
+            font-size: 1.2em;
+            min-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div># 문자열 다루기</div>
+
+    <div id="out"></div>
+
+    <script>
+        const out = document.getElementById('out');
+
+        const println = str => out.innerHTML += `<div>${str}</div>`;
+
+        const fruits = 'banana/kiwi/orange/gyul/sagwa/bae';
+
+        // 자바스크립트는 문자열의 한 문자에 배열처럼 접근할 수 있다
+
+        println(fruits[0]);
+        println(fruits[1]);
+        println(fruits[2]);
+        println(fruits[3]);
+        println(fruits[4]);
+        println(fruits[5]);
+
+        println('len: ' , fruits.length);
+        println('문자열 더하기: ' + 123 + 'abc');
+
+        for (let i = 0; i < fruits.length; ++i) {
+            println(fruits[i]);
+        }
+
+        const fruitArr = fruits.split('/');
+
+        for (fruit of fruitArr) {
+            println(fruit);
+        }
+
+        const foundIndex = fruits.indexOf('kiwi');
+
+        println(fruits + '에서');
+        println('kiwi의 위치 : ' +foundIndex);
+
+        const foundIndex2 = fruits.indexOf(`SAGWA`.toLowerCase());
+        println(foundIndex2);
+
+        // 자바스크립트에서는 Escape 문자가 먹힌다
+        console.log('Hell\noooooo');
+        println('Hello\oooooo');
+
+        // 웹 브라우저에서도 이모지를 지원하고 vscode에서도 이모지를 지원하기 때문에
+        // 요즘은 코드값을 몰라도 그냥 이모지를 사용할 수 있다
+        println('🤦‍♂️');
+        println('🤦‍♂️');
+        println('🤦‍♂️');
+        println('\u{1F921}'); //U+1F912 유니코드 값을 알 때 사용하는 방법
+
+        // 자바스크립트에서 문자의 코드값 확인하기
+        println('🤦‍♂️'.codePointAt());
+        println('🤦‍♂️'.codePointAt().toString(16)); // 16진수로 확인하기
+        println('\u{1f926}');
+
+        // substring(), slice()
+        println(fruits.substring(5)); // 5부터 끝까지
+        println(fruits.substring(10, 15)); // 10부터 14까지
+
+        //substring()과 똑같음
+        println(fruits.slice(5));
+        println(fruits.slice(10, 15));
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3># 숫자 타입</h3>
+
+    <p>F12 누르세오</p>
+
+    <script>
+        let a = 10;
+        let b = '10';
+
+        console.log(a==b);
+        console.log(a===b);
+
+        // 이상한 숫자들
+        console.log(NaN); // 숫자가 아니라는 숫자 타입의값
+        console.log(Infinity); // 무한을 뜻하는 숫자 타입의 값
+
+        console.log(typeof NaN);
+        console.log(typeof Infinity);
+
+        console.log(10 / 0); // Infinity
+        console.log('10a'* 3); //NaN
+
+        let c;
+        console.log(c);
+        console.log(undefined);
+        console.log(10 / undefined);
+
+        // 진법 리터럴
+        console.log(123); // 10진수 123
+        console.log(0b111); //2진수 111
+        console.log(0o123); // 8진수 123
+        console.log(0x123); // 16진수 123
+
+        // 원하는 숫자를 진법의 문자열로 변환
+        const num = 12345;
+        console.log(num.toString(2));
+        
+        // 문자열을 숫자로 변환하기
+        console.log(parseInt(num.toString(2),2));
+
+        // Number()도 다른 타입의 값을 숫자로 변환할 수 있다
+        let value = Number('12345');
+        console.log(value);
+
+        value = Number('33.34566');
+        console.log(value);
+
+        // boolean 타입 값도 숫자로 변환할 수 있다
+        value = Number(true);
+        console.log(value);
+
+        value = Number(false);
+        console.log(value);
+
+        // 날짜 타입도 숫자로 변환 할 수 있다 (유닉스 타임)
+        console.log(new Date());
+        console.log('unix time:', Number(new Date()));
+
+        // 반올림,내림,올림
+        console.log(Math.round(1.333333));
+        console.log(Math.floor(1.333333));
+        console.log(Math.ceil(1.333333));
+
+        // 랜덤
+        console.log(Math.random());
+        console.log(parseInt( Math.random() * 45 + 1));
+        console.log(Math.floor( Math.random() * 45 + 1));
+
+        //더 큰값, 더 작은값
+        console.log(Math.max(1,2,3,4,5,33,4,5,6,7,1));
+        console.log(Math.min(23,4,2,5,7,8,-4,2,3,));
+
+        // 매개변수를 여러개 원하는 곳에 배열 사용하기 (배열을 ...으로 풀어서 사용하기)
+        console.log(Math.max(...[1,2,3,4,5,6,7,8,9]));
+
+        // 제곱, 제곱근
+        console.log(Math.pow(2,10));
+        console.log(Math.sqrt(55));
+
+        // 조건에 NAN 사용하기
+        let result = 10 / 'a';
+
+        console.log('rewult의 값:' , result);
+
+        // NaN은 == ===으로 감지할 수 없다
+        if(result == NaN){
+            console.log('뭔가 잘못되었습니다');
+        }else if(isNaN(result)){
+            console.log('isNaN에는 걸렸습니다.');
+        }
+
+        // 연습문제 : 1 ~ 45의 중복없는 랜덤 6자리 숫자 배열을 생성하여 반환하는 함수를 만들기
+
+        const lotto = function() {
+            let num  = [];
+            while(num.length < 6){
+                ran = parseInt( Math.random() * 45 + 1);
+
+                if(num.indexOf(ran) == -1){
+                    num.push(ran);
+                }
+            }
+            return num;
+        }
+
+        console.log(lotto());
+
+    </script>
+    
+</body>
+</html>
