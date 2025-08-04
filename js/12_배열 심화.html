@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3># 배열 멋있게 다루기</h3>
+
+    <table id="students" border="1">
+        <tr>
+            <th>학번</th>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>수업 만족도</th>
+        </tr>
+    </table>
+
+    <table id ="allavg" border="1">
+        <tr>
+            <th>국어평균</th>
+            <th>영어평균</th>
+            <th>수학평균</th>
+        </tr>
+
+    </table>
+
+    <table id = "mathLoser" border="1">
+        <tr>
+            <th>학번</th>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>수업 만족도</th>
+        </tr>
+    </table>
+
+    <script>
+        const arr = [1,2,3,4,5,6,];
+
+        // arr.forEach(콜백) : 배열의 모든 값을 활용해 전달한 함수를 실행한다
+        arr.forEach((value, index, original) => {
+            console.log(`값은 ${value}이고 ${index}번째 요소입니다`);
+            console.log(`원본 배열은 ${original}입니다.`);
+        });
+
+        const scores = [90,91,75,68,88,45,60];
+
+        // 배열.map(콜백) : 배열의 각 값으로 콜백을 실행한 결과로 이루어진 새 배열을 반환
+
+        const examResult = scores.map(score => score >= 60 ? 'pass':'fail');
+
+        console.log(examResult);
+
+        // 연습 : scores 배열로 grades 배열을 생성해보세요
+
+        const grades = scores.map(score => {
+            if(score > 100){
+                return 'F';
+            }else if(score >= 90){
+                return 'A';
+            }else if(score >= 80){
+                return 'B';
+            }else if(score >= 70){
+                return 'C';
+            }else if(score >= 60){
+                return 'D';
+            }else{
+                return 'F';
+            }
+        });
+
+        console.log(grades);
+
+        // 연습 2: 다음 객체 배열에 평균 점수를 추가한 새로윤 배열을 만들어보세요
+        const students = [
+            {
+                name : '유재석',
+                kor: 90,
+                eng: 88,
+                math: 80
+            },
+            {
+                name: '빌게이츠',
+                kor: 15,
+                eng: 100,
+                math: 99
+            },
+            {
+                name: '마이클 조던',
+                kor: 33,
+                eng: 45,
+                math: 13
+            }
+        ]
+
+
+        // 화살표 함수의 리턴 축약 버전으로 객체를 리턴하기 위해서는 {}를 괄호로 감싸주어야 한다
+        const avgstudents = students.map(student =>{
+            let avg = (student.kor + student.eng + student.math) / 3;
+            return {
+                ...student,
+                avg: avg
+            };
+        })
+
+        console.log(avgstudents);
+
+        //배열.filter(콜백) : 모든 값들로 콜백을 실행한 결과가 true인 요소만 남기는 메서드
+        
+        const filterResult =  students.filter(stu => stu.eng >= 80);
+
+        console.log(filterResult);
+
+        const snacks = ['초코파이','엄마손파이','포테토칩','포카칩','웰치스','제로콜라','초코하임','치토스'];
+
+        const pies = snacks.filter(snack => snack.endsWith('파이'));
+        console.log(pies);
+
+        // 배열을 리턴하는 메서드의 경우 이렇게 연쇄적으로 활용할 수 있다 (메서드 체이닝)
+        snacks
+            .filter(snack => snack.endsWith('칩'))
+            .forEach(snack => console.log(`남은과자:`,snack));
+
+        // 배열.reduce(콜백) : 배열의 모든 값을 활용하여 하나의 결과를 도출해내기 위해 사용한다
+        // 콜백의 첫 번째 인자로는 누적값이 오고 두 번째 인자로는 현재 값이 온다.
+        const totalScore = scores.reduce((acc, curr, index, origin) => {
+            console.log('acc:', acc);
+            console.log('curr:', curr);
+            console.log('index', index);
+            console.log('origin:', origin);
+
+            return acc + curr; // 여기서 리턴하는 값이 계속 누적된다.
+        });
+
+        console.log('총합:', totalScore);
+
+        const bestScore =  scores.reduce((acc, curr) => acc < curr ? curr : acc);
+
+        console.log('최고점수:', bestScore);
+
+        /*
+            1) 학번, 이름, 국어, 영어, 수학, 수업 만족도(별 0 ~ 5)를 가진 
+            학생 100명의 자바스크립트 오브젝트를 랜덤으로생성하기
+
+            2) 모든 학생들의 정보를 HTML에 테이블 형태로 출력하기
+               (60점 미만인 점수는 빨간 글씨로 출력하기, 학생들의 수업 만족도는 별의 개수로 출력하기)
+
+            3) 모든 학생들의 평균 점수를 테이블 형태로 출력하기
+
+            4) 수학 점수가 60점 미만인 학생들로 이루어진 테이블 HTML에 출력하기
+
+            5) 2번의 마지막 행에는 각 열의 총합과 평균을 출력하기(학번, 이름 제외)
+        */
+        function randomName(){
+            const firstName = '김이박정조윤장임한오서신권황안송류차배고문노백유동강하곽전심채마도구설나양성최';
+            const LastName = ['지민', '예린', '민수', '준호', '수빈', '하늘', '동혁', '세진', '유나', '태민', '현우', '지우', '수현', '예준', '시우', '소연', '재민', '혜원', '현지', '도윤', '준영', '지아', '유빈', '진호', '아영', '경민', '다현', '하림', '민지', '선우', '세영', '태양', '세림', '진우', '지현', '태희', '연우', '나영', '시연', '보민', '정훈', '세정', '규리', '주원', '소진', '경수', '나윤', '유정', '하진', '유리', '정아', '다은', '서윤', '연지', '예지', '준희', '민혁', '소희', '다미', '주희', '한별', '정민', '준영', '세빈', '예원', '윤서', '재우', '채연', '정후', '나현', '유진', '태호', '예원', '지성', '현주', '미래', '윤지', '연경', '재영', '은비', '현진', '이수', '성민', '기현', '현아', '다희', '태경', '민영', '준호', '하은', '유진', '예린', '주하', '시연', '수진', '진영', '해솔', '지안', '우진', '윤경', '민세', '다온', '예지', '주희', '은서', '진서', '소이', '아린', '수영', '지안', '도윤', '수미', '민지', '주영', '영지', '성우', '주영'];
+            let name = '';
+
+            const firlen = firstName.length;
+            const laslen = LastName.length;
+
+            let firran = parseInt(Math.random() * firlen);
+            let lasran = parseInt(Math.random() * laslen);
+
+            name += firstName.charAt(firran);
+            name += LastName[lasran];         
+
+            return name;
+        }
+
+        const ranScore = () => parseInt(Math.random() * 100 + 1);
+        const ranSatits = () => parseInt(Math.random() * 5 + 1);
+        
+        
+
+        const stu = [];
+        for(i = 0; i < 100; i++){
+            stu.push({
+                stuNum: i+1,
+                stuName: randomName(),
+                kor: ranScore(),
+                eng: ranScore(),
+                math: ranScore(),
+                satis: ranSatits()
+            })
+        }
+
+        const stutable = document.getElementById('students');
+        stutable.style.color = 'black';
+
+        for(i = 0; i < stu.length; i++){
+            let star='';
+            for(j =0; j < stu[i].satis;j++){
+                star+='☆';
+            }
+            stutable.innerHTML+=
+            `<tr id = ${stu[i].stuNum}>
+                <td id = 'num'>${stu[i].stuNum}</td>
+                <td id = 'name'>${stu[i].stuName}</td>
+                <td >${stu[i].kor}</td>
+                <td id = 'eng'>${stu[i].eng}</td>
+                <td id = 'math'>${stu[i].math}</td>
+                <td id = 'satis'>${star}</td>
+            </tr>`;
+        }
+        
+        const stutable2 = document.querySelectorAll('#students tr');
+
+        for(i = 1; i <= 100; i++){
+            const stus = stutable2[i].querySelectorAll('td');
+            for(j = 2;j < 5;j++){
+                if(stus[j].outerText < 60){
+                    stus[j].style.color = 'red';
+                }
+            }
+        }
+
+        const allavg = document.getElementById('allavg');
+
+        const allscore = stu.reduce((acc, curr) => {
+            acc.kor += curr.kor;
+            acc.eng += curr.eng;
+            acc.math += curr.math;
+            acc.satis += curr.satis;
+            return acc;
+        }, {kor: 0, eng: 0, math: 0, satis: 0});
+
+        console.log(allscore);
+
+
+        allavg.innerHTML += `
+            <tr>
+                <td>${allscore.kor/stu.length}</td>
+                <td>${allscore.eng/stu.length}</td>
+                <td>${allscore.math/stu.length}</td>    
+            </tr>
+        `;
+
+        const filterstu =  stu.filter(stu => stu.math < 60);
+        
+        const mathLoser = document.getElementById('mathLoser');
+
+        for(i = 0; i < filterstu.length; i++){
+            let star='';
+            for(j =0; j < filterstu[i].satis;j++){
+                star+='☆';
+            }
+            mathLoser.innerHTML+=
+            `<tr id = ${filterstu[i].stuNum}>
+                <td id = 'num'>${filterstu[i].stuNum}</td>
+                <td id = 'name'>${filterstu[i].stuName}</td>
+                <td >${filterstu[i].kor}</td>
+                <td id = 'eng'>${filterstu[i].eng}</td>
+                <td id = 'math'>${filterstu[i].math}</td>
+                <td id = 'satis'>${star}</td>
+            </tr>`;
+        }
+
+
+        stutable.innerHTML+=
+            `<tr>
+                <td>합계</td>
+                <td> </td>
+                <td>${allscore.kor}</td>
+                <td>${allscore.eng}</td>
+                <td>${allscore.math}</td>
+                <td>${allscore.satis}</td>
+            </tr>`;
+
+            stutable.innerHTML+=
+            `<tr>
+                <td>평균</td>
+                <td> </td>
+                <td>${allscore.kor/stu.length}</td>
+                <td>${allscore.eng/stu.length}</td>
+                <td>${allscore.math/stu.length}</td>
+                <td>${allscore.satis/stu.length}</td>
+            </tr>`;
+
+
+
+    </script>
+</body>
+</html>
