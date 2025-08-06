@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_객체.html</title>
+</head>
+<body>
+    <h3># 자바스크립트 객체(오브젝트)</h3>
+
+    <p>F12를 누르세요</p>
+
+    <script>
+        // 새 객체 생성하기
+
+        // 객체의 키 값에 ''를 써도 되고 안써도 되지만 공백을 포함하려는 경우에는 반드시 사용해야 한다
+        const car = {
+            max_speed: 250,
+            'main_speed': -50,
+            'fuel size': 30
+        };
+        const snack = new Object();
+
+        // 새 객체에 값 추가하기
+        car.name = '소나타';
+        car.price = 5000;
+        car['owner'] = '황금성';
+        // 키 값에 공백도 활용이 가능하다
+        car['before owner'] = '이정향'; 
+
+        // 객체의 필드값 수정하기
+        car.price = 7000;
+
+        // 객체의 필드 삭제하기
+        delete car.price;
+
+        console.log(car);
+
+        // 객체의 키 값을 동적(변수에 따라 달라지게)으로 활용하는 것도 가능하다
+        let keyName = 'employee_name';
+
+        keyName = 'first_name';
+
+        const emp1 = {
+            [keyName]: 'Smith'
+        };
+
+        console.log(emp1);
+
+        // 변수를 활용해 새 객체를 생성할 때 키 값을 생략하면 변수명이 자동으로 키 이름이 된다
+        const createSnack = (name, price, exp_date) => {
+            return { name, price, exp_date }
+        };
+
+        console.log(createSnack('새우깡', 1000, '25/09/25'));
+
+        // 객체는 for ... in으로 쉽게 반복할 수 있다
+        const choco = createSnack('칸쵸', 1500, '27/01/11');
+
+        for (key in choco) {
+            console.log(`key: ${key}, value: ${choco[key]}`);
+        }
+
+        // key들로만 이루어진 배열(keys)를 보고 싶으면 Object.keys() 메서드를 활용한다
+        console.log('keys의 결과:', Object.keys(choco));
+        
+        // value들로만 이루어진 배열(values)를 보고 싶으면 Object.values() 메서드를 활용한다
+        console.log('values의 결과:', Object.values(choco));
+ 
+        // ...를 통해 객체를 풀어서 사용할 수 있다
+        console.log({
+            ...choco,
+            made_in: '평택'
+        })
+    </script>
+</body>
+</html>

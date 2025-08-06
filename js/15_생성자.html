@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_생성자.html</title>
+</head>
+<body>
+    <h3># 생성자 함수</h3>
+
+    <ul>
+        <li>
+            함수 내부에서 this를 사용하면 나중에 new와 함께 호출하여 
+            새로운 인스턴스를 생성하여 사용할 수 있다
+        </li>
+        <li>new와 함께 사용하지 않으면 this가 올바르게 작동하지 않으므로 주의해야 한다</li>
+        <li>첫 글자를 대문자로 작성하여 클래스 역할을 하는 함수임을 표시해두는것이 좋다</li>
+    </ul>
+
+    <p>F12 눌러요</p>
+
+    <script src="./scripts/coffee.js"></script>
+    <script>
+        const coffee1 = new Americano('아메리카노', 2000, 'GE');
+        coffee1.drink();
+
+        // 자바스크립트에서 클래스를 정의하는 방식 (함수 내부에 this를 사용함)
+        function Fruit(name, price, sweet) {
+            // this = {}; // 실제로 new를 통해 함수를 호출하면 이런 객체가 정의됨
+            
+            // 인스턴스 필드 정의하기 (this 객체에 필드 추가)
+            this.name = name;
+            this.price = price;
+            this.sweet = sweet;
+
+            // 인스턴스 메서드 정의하기 (this 객체에 메서드 추가)
+            this.eat = () => {
+                console.log(`${this.price}원 짜리 ${this.name}를 한입 먹었습니다.`);
+            };
+        }
+
+        // 인스턴스 생성하고 사용하기
+        const f1 = new Fruit('사과', 1000, 3.3);
+        f1.eat();
+    </script>
+</body>
+</html>

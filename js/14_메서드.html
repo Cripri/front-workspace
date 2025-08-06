@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_메서드.html</title>
+</head>
+<body>
+    <h3># 자바스크립트 객체의 메서드 활용하기</h3>
+
+    <p>F12를 누르세요</p>
+
+    <script>
+        // 객체의 필드에 함수를 정의해 넣어놓으면 메서드가 된다 
+        // 메서드는 this를 통해 해당 객체의 필드값을 활용할 수 있다
+        const cat = {
+            name: '애옹이',
+            age: 5,
+            leg_str: 10,
+            jump: function() {
+                console.log(`${this.name}가 ${this.leg_str}만큼의 높이를 점프했습니다.`);
+            }  
+        };
+
+        // 함수를 그냥 조회하기
+        console.log(cat.jump);
+        // 함수를 사용하기
+        cat.jump();
+
+        // 이미 만들어져 있는 객체에 메서드 추가하기
+        cat.hide = function() {
+            console.log(`${this.name}가 구석진 곳에 잘 숨었습니다.`);
+            console.log(this);  // 실행하는 시점에서의 해당 범위의 this를 의미하게 된다
+        };
+        cat.hide();
+
+        // 화살표 함수는 본인의 영역을 가지지 못하므로 선언하는 시점에서의 this가 
+        // {}바깥 영역의 this를 의미하게 된다 (아무것도 없는 상태의 this는 window 객체를 의미한다)
+        cat.run = () => {
+            console.log(`${this.name}가 우다다하고 달렸습니다.`);
+            console.log('화살표함수 {}내부의 this:',this);
+        };
+        console.log('화살표 함수 {}외부의 this:',this);
+        cat.run();
+
+        // 객체에 메서드를 정의할 때 단축 문법을 사용할 수 있다 (this 잘 적용됨)
+        const shark = {
+            name: '상어',
+            bite(target) {
+                console.log(`${this.name}가 ${target}을(를) 물었습니다.`);
+            },
+            swim(how) {
+                // 메서드 내부에서는 함수를 정의해서 쓸 때 화살표 함수를 사용해야 문제가 안생긴다
+                // (function 사용시 this가 올바르게 작동하지 않음)
+                const doSwim = () => {
+                    console.log(`${this.name}가 ${how} 수영을 합니다.`);
+                    console.log(this);
+                };
+                doSwim();
+            }
+        };
+
+        shark.bite('튜브');
+        shark.bite('안전 요원');
+
+        shark.swim('빠르게');
+        shark.swim('조용하게');
+
+        // 연습문제 : 다음과 같이 코드가 진행되었을때 올바르게 동작하는 객체를 만들어보세요
+
+        // ※ 4층은 F층으로 출력되어야 함
+        // 어케 해야 .down.down.show가 멀쩡하게 작동하는건데용 퉤.
+        // const elevator = {
+        //     floor: 0,
+
+        //     down() {
+        //         const down = () => {
+        //             this.floor -= 1;
+        //             return this;
+        //         };
+        //         down();
+        //     },
+
+        //     up() {
+        //         const up = () => {
+        //             this.floor += 1;
+        //             return this;
+        //         };
+        //         up();
+        //     },
+
+        //     show() {
+        //         const show = () => {
+        //             if (this.floor === 4) {
+        //                 console.log('현재 F층입니다.');
+        //             } else if (this.floor < 0) {
+        //                 console.log(`현재 B${Math.abs(this.floor)}층입니다.`);
+        //             } else {
+        //                 console.log(`현재 ${this.floor}층입니다.`);
+        //             }
+        //         };
+        //         show();
+        //     }
+        // };
+
+        // 강사님 풀이
+        const elevator = {
+            floor: 3,
+            floor_name: ['B3', 'B2', 'B1', '1', '2', '3', 'F', '5', '6', '7'],
+            down() {
+                if (this.floor > 0) {
+                    --this.floor;
+                }
+                return this;
+            },
+            up() {
+                if (this.floor < this.floor_name.length) {
+                    ++this.floor;
+                }
+                return this;
+            },
+            show() {
+                console.log(`현재 ${this.floor_name[this.floor]}층입니다.`);
+            }
+        }
+
+        elevator.down().down().show();  // 출력 : 현재 B2층입니다.
+        elevator.up().up().up().show(); // 출력 : 현재 2층입니다.
+    </script>
+</body>
+</html>

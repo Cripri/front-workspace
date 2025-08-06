@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3># window.setTimeout(callback, millisec)</h3>
+
+    <ul>
+        <li>설정한 시간만큼 시간이 지난 후에 콜백을 한 번 실행한다</li>
+        <li>시간은 밀리초 단위로 설정한다</li>
+        <li>설정한 타임 아웃을 삭제하기 위해서는
+            해당 타임아웃 인스턴스를 clearTimeout()에 전달해야 한다
+        </li>
+    </ul>
+
+    <div id="box1" style="width: 100px; height: 100px;"></div>
+
+    <button id="box1-stop">Stop!</button>
+
+    <h3># window.setInterval()</h3>
+
+    <ul>
+        <li>설정된 시간마다 콜백을 계속 실행한다</li>
+        <li>설정된 인터벌을 삭제하기 위해서는 
+            미리 인터벌 ID를 받아놓고 window.clearInterval()에 전달해야 한다</li>
+
+    </ul>
+
+    <div id="box2" style="width: 100px; height: 100px; background-color: burlywood;"></div>
+
+    <script>
+        const box1 = document.getElementById('box1');
+        const box1StopBtn = document.getElementById('box1-stop');
+
+        const timeout1 = window.setTimeout(() => {
+            box1.style.backgroundColor = 'salmon';
+        }, 1500);
+
+        const timeout2 = window.setTimeout(() => {
+            box1.style.position = 'relative';
+            box1.style.left = '100px'; 
+        }, 3000);
+
+        const timeout3 = window.setTimeout(() => {
+            box1.style.left = '200px';
+        }, 4500);
+
+        box1StopBtn.addEventListener('click', e =>{
+            window.clearTimeout(timeout1);
+            window.clearTimeout(timeout2);
+            window.clearTimeout(timeout3);
+        });
+        
+        const box2 = document.getElementById('box2');
+        let size = 100;
+        const sizeupInterval = window.setInterval(() => {
+            size += 10;
+
+            if(size > 300){
+                window.clearInterval(sizeupInterval);
+            }
+
+            box2.style.width = `${size}px`;
+            box2.style.height = `${size}px`;
+            box2.innerText = `${size} x ${size}`;
+        },50);
+        
+
+
+    </script>
+    
+</body>
+</html>
