@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/asdfa.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<div id="wrapper">
+    <div class="wrap">
+        <header class="first_box">
+            <div class="home_link">
+                <a href="/www/index.do" title="성북구청 홈페이지" class="home_btn">
+                    <span>성북구청 바로가기</span>
+                </a>
+            </div>
+            <h1 class="title_box">
+                <span class="skip">성북의 미래 현장에서 답을 찾다</span>
+                <span class="title">성북구청 <em>통합로그인</em></span>
+            </h1>
+            <div class="desc_box">
+                <p><span>성북구청 홈페이지에 방문해주신 여러분을 환영합니다.</span><br>
+                    <em class="em_sky">회원가입 및 로그인</em>을 하시면 회원님들에게 제공되는 신청, 접수 등 다양한 콘텐츠를 이용하실 수 있습니다. <br>
+                    회원가입을 하지 않고 휴대폰본인인증, 아이핀인증을 하는 경우 <em class="em_sky">게시판 글쓰기 등으로 이용이 제한</em>됩니다.</p>
+                <span><span class="skip">안내사항</span> 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제44조의5(게시판 이용자의 본인 확인) 및 전자정부법 시행령 제12조(민원인 등의 본인 확인)</span>
+            </div>
+        </header>
+
+        <div id="container">
+            <main>
+                <div class="form_box">
+                    <div class="form_wrap">
+                        <ul class="form_list clearfix">
+                            <li class="form_item n01">
+                                <span class="form_title">회원 로그인</span>
+                                <form name="loginForm" id="loginForm" method="post" action="/login.do" onsubmit="return fn_loginSubmit(this)">
+                                <div class="login_inp_box">
+                                    <div class="login_inp id">
+                                        <label for="userId">아이디</label>
+                                        <input type="text" name="userId" id="userId" placeholder="아이디 입력">
+                                    </div>
+                                    <div class="login_inp userPasswd">
+                                        <label for="password">비밀번호</label>
+                                        <input type="password" name="password" id="password" class="passwd_input" placeholder="비밀번호 입력">
+                                        <button type="button" name="pw_hide" id="pw_hide" class="btn_view">
+                                            <span class="skip">비밀번호 표시 안함</span>
+                                        </button>
+                                    </div>
+                                    <button type="submit" class="login_inp_btn">로그인</button>
+                                </div>
+                                </form>
+                                <div class="find_wrap clearfix">
+                                    <a href="/webSignUpIntro.do" class="find_anchor">회원가입</a>
+                                    <a href="/findIdpw.do" class="find_anchor">아이디/비밀번호 찾기</a>
+                                </div>
+                                <div class="popup_box ">
+                                    <div class="popup_wrap">
+                                        <p class="popup_title">탈퇴회원입니다.<br>회원가입을 진행해주세요.</p>
+                                        <p class="popup_text">회원가입 시 기존 아이디는 <em class="em_pink">재사용이 불가</em>합니다.</p>
+                                        <button type="button" class="close">닫기</button>
+                                    </div>
+                                </div>
+                            </li>
+							
+                            <li class="form_item n02">
+                                <span class="form_title">SNS 로그인</span>
+                                <div class="btn_box">
+									
+                                    <button type="button" class="check_btn naver" title="새창" onclick="fn_naver();">네이버 간편 로그인</button>
+									
+									
+                                    <button type="button" class="check_btn kakao" title="새창" onclick="fn_kakao();">카카오 간편 로그인</button>
+									
+                                </div>
+                                <p class="login_caution">
+                                    SNS로그인을 사용하시려면 회원가입이 필수이며, <br>
+                                    <em class="em_pink">최초 1회 계정인증</em>이 필요합니다
+                                </p>
+                            </li>
+							
+                            <li class="form_item n03">
+                                <span class="form_title">비회원 로그인</span>
+                                <div class="btn_box">
+									
+                                    <button type="button" class="check_btn phone" title="새창" onclick="fn_smsSubmit();">휴대폰 본인인증</button>
+									
+									
+                                    <button type="button" class="check_btn ipin" title="새창" onclick="fn_ipinSubmit();">아이핀 인증</button>
+									
+                                </div>
+                                <p class="login_caution">
+                                    본인 명의의 휴대폰 본인인증을 통해 로그인하는 경우 <br>
+                                    일부 홈페이지 서비스 이용이 제한됩니다. <br>
+                                    PASS 앱이 없으신 분은 휴대폰 인증시 인증창 하단의 <br>
+                                    "문자(SMS)로 인증하기"를 선택하여 인증해주세요.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer id="footer">
+            <div class="footer_inner">
+                <div class="footer_info">
+                    <p class="address">(우) 02848 서울특별시 성북구 보문로168(삼선동5가)</p>
+                    <p class="tel">성북구청 홍보전산과 : <span>02-2241-4549, 4546</span> <em>/</em> <br> 성북구청 당직실 : <span>02-2241-3330, 2241-3300~02</span></p>
+                </div>
+                <div class="copyright">
+                    <p>COPYRIGHT 2025 <em>SEONGBUK-GU</em> GOVERNMENT. <br> ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script nonce="NEOCMSSCRIPT">
+
+    
+
+    function fn_kakao() {
+        window.location = 'https://kauth.kakao.com/oauth/authorize?client_id=07aa9cf58f69c1bfece0c2b1b4e3a279&redirect_uri=https://sb.go.kr/kakaoLogin.do&response_type=code';
+    }
+
+    function fn_naver() {
+    	var urlValue = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=pYHgZRKFLfBsTzWwROPW&redirect_uri=https%3A%2F%2Fwww.sb.go.kr%2FnaverLogin.do&state=c7ba19b0-0861-44c7-bf3b-f8932d2b599a';
+    	if(urlValue.indexOf("www.sb.go.kr") > -1) {
+    		urlValue = urlValue.replace("www.sb.go.kr", "sb.go.kr");
+    	}
+        window.location = urlValue;
+		//alert("서비스 준비중 입니다.");
+    }
+
+    function fn_facebook() {
+        window.location = 'https://www.facebook.com/v2.5/dialog/oauth?client_id=264821581429041&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2FfacebookLogin.do&scope=email';
+    }
+    function fn_google() {
+        window.location = 'https://accounts.google.com/o/oauth2/auth?client_id=null&redirect_uri=null&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile&approval_prompt=force&access_type=offline';
+    }
+</script>
+
+
+
+
+    <script nonce="NEOCMSSCRIPT">
+        window.name ="Parent_window";
+
+    function fn_smsSubmit() {
+        // 새 창을 먼저 연다
+        var popup = window.open('about:blank', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+
+        // 팝업 차단 확인
+        if (!popup || popup.closed || typeof popup.closed == 'undefined') {
+            alert("팝업이 차단되었습니다. 팝업 차단을 해제해주세요.");
+            return;
+        }
+
+        // 팝업 창에서 실행할 HTML
+        var formHtml = 
+            '<html>' +
+            '<head><title>인증 중...</title></head>' +
+            '<body onload="document.form_chk.submit();">' +
+            '<form name="form_chk" method="post" action="https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb">' +
+            '<input type="hidden" name="m" value="checkplusSerivce">' +
+            '<input type="hidden" name="EncodeData" value="' + document.form_chk.EncodeData.value + '">' +
+            '<input type="hidden" name="param_r1" value="LOGIN">' +
+            '<input type="hidden" name="param_r2" value="">' +
+            '<input type="hidden" name="param_r3" value="">' +
+            '</form>' +
+            '</body>' +
+            '</html>';
+
+        // IE에서는 setTimeout을 사용하여 document.write 실행해야 안정적으로 동작
+        setTimeout(function () {
+            popup.document.open();
+            popup.document.write(formHtml);
+            popup.document.close();
+        }, 100);
+    }
+    </script>
+
+
+    <script nonce="NEOCMSSCRIPT">
+        window.name ="Parent_window";
+
+        function fn_ipinSubmit(){
+			
+			// 새 창을 먼저 연다
+			var popup = window.open('about:blank', 'popupIPIN2', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+
+			// 팝업 차단 확인
+			if (!popup || popup.closed || typeof popup.closed == 'undefined') {
+				alert("팝업이 차단되었습니다. 팝업 차단을 해제해주세요.");
+				return;
+			}
+
+			// 팝업 창에서 실행할 HTML
+			var formHtml = 
+				'<html>' +
+				'<head><title>인증 중...</title></head>' +
+				'<body onload="document.form_ipin.submit();">' +
+				'<form name="form_ipin" method="post" action="https://cert.vno.co.kr/ipin.cb">' +
+				'<input type="hidden" name="m" value="pubmain">' +
+				'<input type="hidden" name="enc_data" value="' + document.form_ipin.enc_data.value + '">' +
+				'<input type="hidden" name="param_r1" value="LOGIN">' +
+				'<input type="hidden" name="param_r2" value="">' +
+				'<input type="hidden" name="param_r3" value="">' +
+				'</form>' +
+				'</body>' +
+				'</html>';
+
+			// IE에서는 setTimeout을 사용하여 document.write 실행해야 안정적으로 동작
+			setTimeout(function () {
+				popup.document.open();
+				popup.document.write(formHtml);
+				popup.document.close();
+			}, 100);			
+				
+				
+				/*
+				window.open('', 'popupIPIN2', 'width=450, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+				document.form_ipin.target = "popupIPIN2";
+				document.form_ipin.action = "https://cert.vno.co.kr/ipin.cb";
+				document.form_ipin.param_r1.value = 'LOGIN';
+				document.form_ipin.param_r2.value = '';
+				document.form_ipin.param_r3.value = '';
+				document.form_ipin.submit();
+				*/
+        }
+    </script>
+    <!-- 가상주민번호 서비스 팝업을 호출하기 위해서는 다음과 같은 form이 필요합니다. -->
+    <form name="form_ipin" method="post">
+        <input type="hidden" name="m" value="pubmain">						<!-- 필수 데이타로, 누락하시면 안됩니다. -->
+        <input type="hidden" name="enc_data" value="AgEERFc4New7mt+CiMjbPEH1G0SLEhcc0B4AVaap+m/XLp+3WzQJ8/JUlnLbP7RLEmrq241mFFUiTb3VmcNqpJQZoLuiJ0u5SbOAFaTABNXI+SMXzeonoG1ZYgC09tzYtNdh/d29uTiCvYUUwe55yIL61s0EQo6UHtZVNlxUKS2Ull9SnBzQhzBNnLZfMjCWINHtyYnN82zWRvkK7LGJug4L3xgY9UNI3FxFQWCs7FXw0gw3ZxqZa/psngbJeF2MpR8BMORYnjsabo0FeXob3JPi6MGDXVEhtg9vKgscYJXOgxuRUhj7">		<!-- 위에서 업체정보를 암호화 한 데이타입니다. -->
+
+        <!-- 업체에서 응답받기 원하는 데이타를 설정하기 위해 사용할 수 있으며, 인증결과 응답시 해당 값을 그대로 송신합니다.
+             해당 파라미터는 추가하실 수 없습니다. -->
+        <input type="hidden" name="param_r1" value="">
+        <input type="hidden" name="param_r2" value="">
+        <input type="hidden" name="param_r3" value="">
+
+
+    </form>
+
+    <!-- 가상주민번호 서비스 팝업 페이지에서 사용자가 인증을 받으면 암호화된 사용자 정보는 해당 팝업창으로 받게됩니다.
+    따라서 부모 페이지로 이동하기 위해서는 다음과 같은 form이 필요합니다. -->
+    <form name="vnoform" method="post">
+        <input type="hidden" name="enc_data">								<!-- 인증받은 사용자 정보 암호화 데이타입니다. -->
+
+        <!-- 업체에서 응답받기 원하는 데이타를 설정하기 위해 사용할 수 있으며, 인증결과 응답시 해당 값을 그대로 송신합니다.
+             해당 파라미터는 추가하실 수 없습니다. -->
+        <input type="hidden" name="param_r1" value="">
+        <input type="hidden" name="param_r2" value="">
+        <input type="hidden" name="param_r3" value="">
+    </form>
+
+<script nonce="NEOCMSSCRIPT">
+    //<![CDATA[
+    function fn_loginSubmit(frm) {
+        if( frm.userId.value == "" ) {
+            alert("아이디를 입력해 주세요");
+            frm.userId.focus();
+            return false;
+        }
+
+        if( frm.password.value == "" ) {
+            alert("비밀번호를 입력해 주세요");
+            frm.password.focus();
+            return false;
+        }
+    }
+    //]]!>
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+/* ===== Reset (minimal) ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ===== Layout: Intro Container ===== */
+#intro-con {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 24px 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', Arial, sans-serif;
+  color: #222;
+}
+
+/* ===== Top area ===== */
+#intro-con .intro-top {
+  text-align: center;
+  padding: 12px 0 20px;
+}
+
+#logo img {
+  width: 72px;   /* match desired emblem size */
+  height: auto;
+  margin: 0 auto 8px;
+}
+
+.headtxt {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 6px 0 4px;
+}
+
+.subtxt {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+.subtxt span { display: inline-block; margin: 2px 6px; }
+.subtxt strong { font-weight: 700; color: #111; }
+
+/* ===== Info area (cards/links) ===== */
+.intro-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+/* 금천구청 바로가기 카드 (gchome) */
+.gchome > a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.gchome-con {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+
+.gchome-con .ico img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.gchome-con span {
+  line-height: 1.3;
+  font-size: 15px;
+}
+
+/* ===== Utility (only what we actually use) ===== */
+.hidden { display: none !important; }
+.center { text-align: center !important; }
