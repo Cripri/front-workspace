@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"><title>등본 서류 작성</title>
+  <link rel="stylesheet" href="/css/minwon_maker/residentregistration.css">
+</head>
+<body>
+<main>  
+  <h2>주민등록 등본</h2>
+
+  <form method="post" action="#">
+    <div th:replace="~{fragments/components :: Text('신청인 성명', 'applicantName', ${null}, '홍길동')}"></div>
+    <div th:replace="~{fragments/components :: Rrn('주민등록번호', 'rrnFront', 'rrnBack', ${null}, ${null})}"></div>
+    <div th:replace="~{fragments/components :: Date('접수일', 'create_date', ${null})}"></div>
+
+    <!-- 1) 과거의 주소 변동 사항  [ ]전체 포함  [ ]직접 입력: 최근  년 포함 -->
+    <h3>1. 과거의 주소 변동 사항</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('전체 포함', 'address_history_all', ${'N'})}"></div>
+    <div th:replace="~{fragments/components :: CheckboxYN('직접 입력 사용', 'address_history_use_years', ${'N'})}"></div>
+    <div th:replace="~{fragments/components :: Number('최근(년) 포함', 'address_history_years', ${null}, ${0}, ${99})}"></div>
+
+    <!-- 2) 세대 구성 사유  [ ]포함 -->
+    <h3>2. 세대 구성 사유</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('세대 구성 사유 포함', 'household_reason', ${'N'})}"></div>
+
+    <!-- 3) 세대 구성 일자  [ ]포함 -->
+    <h3>3. 세대 구성 일자</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('세대 구성 일자 포함', 'household_date', ${'N'})}"></div>
+
+    <!-- 4) 발생일 / 신고일  [ ]포함 -->
+    <h3>4. 발생일 / 신고일</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('발생일/신고일 포함', 'occurrence_date', ${'N'})}"></div>
+
+    <!-- 5) 변동 사유  [ ]포함( □세대, □세대원) -->
+    <h3>5. 변동 사유</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('변동 사유 포함', 'personal_change_details', ${'N'})}"></div>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <div th:replace="~{fragments/components :: CheckboxYN('세대', 'change_scope_household', ${'N'})}"></div>
+      <div th:replace="~{fragments/components :: CheckboxYN('세대원', 'change_scope_member', ${'N'})}"></div>
+    </div>
+
+    <!-- 6) 교부 대상자 외 세대주ㆍ세대원ㆍ외국인등의 이름  [ ]포함 -->
+    <h3>6. 교부 대상자 외 인원 이름</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('이름 포함', 'other_names_include', ${'N'})}"></div>
+    <div th:replace="~{fragments/components :: Textarea('이름 목록(선택, 줄바꿈 구분)', 'other_names_list', ${''}, ${3})}"></div>
+
+    <!-- 7) 주민등록번호 뒷자리  [ ]포함( □본인, □세대원) -->
+    <h3>7. 주민등록번호 뒷자리</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('주민등록번호 뒷자리 포함(전체)', 'rrn_last7', ${'N'})}"></div>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <div th:replace="~{fragments/components :: CheckboxYN('본인만', 'rrn_last7_self', ${'N'})}"></div>
+      <div th:replace="~{fragments/components :: CheckboxYN('세대원만', 'rrn_last7_member', ${'N'})}"></div>
+    </div>
+
+    <!-- 8) 세대원의 세대주와의 관계  [ ]포함 -->
+    <h3>8. 세대원의 세대주와의 관계</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('세대주와의 관계 포함', 'head_relationship', ${'N'})}"></div>
+
+    <!-- 9) 동거인  [ ]포함 -->
+    <h3>9. 동거인</h3>
+    <div th:replace="~{fragments/components :: CheckboxYN('동거인 포함', 'roommate', ${'N'})}"></div>
+
+    <!-- 기타: 주소 입력/연락처/관계 등 예시 -->
+    <h3>기타 입력</h3>
+    <div>주소 입력 API 영역 (추후 연동)</div>
+    <div th:replace="~{fragments/components :: Text('대상자와의 관계(직접 입력)', 'head_relationship_text', ${null}, 'ex_본인, 부, 모')}"></div>
+    <div th:replace="~{fragments/components :: Text('연락처(- 포함)', 'phone_number', ${null}, 'ex_010-0000-0000')}"></div>
+
+
+    <button type="submit">제출</button>
+  </form>
+</main>
+</body>
+</html>
