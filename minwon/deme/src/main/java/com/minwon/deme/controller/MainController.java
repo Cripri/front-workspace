@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.minwon.deme.dto.Option;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class MainController {
@@ -47,11 +49,26 @@ public class MainController {
         return "minwon_maker/residentregistration";
     }
 
-    @GetMapping("/minwon/test")
+    @GetMapping("/minwon/test2222")
     public String view2(Model model){
         model.addAttribute("dto", null); // 일단 null
         return "minwon_maker/residentregistration";
     }
+
+
+    @GetMapping("/minwon/sign")
+    public String sign() {
+        return "fragments/sign";
+    }
     
+    @GetMapping("/minwon/signtest")
+    public String sign3() {
+        return "fragments/sign2";
+    }
+
+    @GetMapping("/minwon/test")
+    public String sign2() {
+        return "minwon_maker/residentregistration2";
+    }
     
 }

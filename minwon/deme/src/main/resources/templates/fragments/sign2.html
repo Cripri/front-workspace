@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>서명 작성</title>
+  <link rel="stylesheet" href="./main.css" />
+  <style>
+    .sign-wrap { padding: 12px; }
+    .toolbar { display:flex; gap:8px; align-items:center; margin-bottom:10px; flex-wrap: wrap; }
+    .btn { padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background:#fff; cursor:pointer; }
+    .btn.primary { background:#0ea5e9; color:#fff; border-color:#0ea5e9; }
+    .btn.soft { background:#f1f5f9; }
+    .row { display:flex; gap:12px; align-items:center; }
+    .sign-board { border:1px dashed #94a3b8; border-radius:12px; background:#fff; position:relative; }
+    .hint { font-size:12px; color:#64748b; margin-top:6px; }
+  </style>
+</head>
+<body>
+  <div class="sign-wrap">
+    <h2>서명(사인) 작성</h2>
+    <div class="toolbar">
+      <div class="row">
+        <label>펜 굵기</label>
+        <input id="penSize" type="range" min="1" max="10" step="1" value="3">
+      </div>
+      <div class="row">
+        <label>색상</label>
+        <input id="penColor" type="color" value="#111111">
+      </div>
+      <button id="clearBtn" class="btn soft" type="button">지우기</button>
+      <button id="undoBtn" class="btn soft" type="button">되돌리기</button>
+      <span class="hint">마우스/터치로 서명하세요. (빠르게 그려도 부드럽게 저장됨)</span>
+    </div>
+
+    <div id="board" class="sign-board">
+      <canvas id="signCanvas" width="900" height="350"></canvas>
+    </div>
+
+    <div class="toolbar" style="margin-top:10px;">
+      <button id="saveBtn" class="btn primary" type="button">저장 후 첨부</button>
+      <button id="closeBtn" class="btn" type="button">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('signCanvas');
+    const ctx = canvas.getContext('2d');
+    const penSize = document.getElementById('penSize');
+    const penColor = document.getElementById('penColor');
+    const clearBtn = document.getElementById('clearBtn');
+    const undoBtn = document.getElementById('undoBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // Retina scaling
+    function fitCanvasToPixelRatio() {
+      const ratio = Math.max(window.devicePixelRatio || 1, 1);
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = Math.round(rect.width * ratio);
+      canvas.height = Math.round(rect.height * ratio);
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.scale(ratio, ratio);
+      redrawAll();
+    }
+
+    // Resize canvas to fit parent width
+    function fitCanvasToContainer() {
+      const board = document.getElementById('board');
+      const margin = 24;
+      const targetW = Math.min(900, board.clientWidth - margin);
+      canvas.style.width = targetW + 'px';
+      canvas.style.height = '350px';
+      fitCanvasToPixelRatio();
+    }
+
+    // Stroke state
+    let drawing = false;
+    let points = []; // current stroke
+    const strokes = []; // history
+
+    function getPos(e) {
+      if (e.touches && e.touches[0]) {
+        const rect = canvas.getBoundingClientRect();
+        return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+      } else {
+        const rect = canvas.getBoundingClientRect();
+        return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      }
+    }
+
+    function startDraw(e) {
+      drawing = true;
+      points = [];
+      points.push(getPos(e));
+      e.preventDefault();
+    }
+
+    function endDraw() {
+      if (!drawing) return;
+      drawing = false;
+      if (points.length > 0) {
+        strokes.push({ points: points.slice(), size: Number(penSize.value), color: penColor.value });
+      }
+      points = [];
+    }
+
+    // rAF drawing for smooth performance
+    let pending = false;
+    function drawLoop() {
+      if (!pending) return;
+      pending = false;
+      redrawAll();
+      requestAnimationFrame(drawLoop);
+    }
+
+    function draw(e) {
+      if (!drawing) return;
+      points.push(getPos(e));
+      pending = true;
+      requestAnimationFrame(drawLoop);
+      e.preventDefault();
+    }
+
+    function redrawAll() {
+      // clear
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // grid hint (optional light baseline)
+      ctx.save();
+      ctx.scale(Math.max(window.devicePixelRatio||1,1), Math.max(window.devicePixelRatio||1,1));
+      ctx.strokeStyle = '#e2e8f0';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      const baseY = canvas.height / Math.max(window.devicePixelRatio||1,1) - 40;
+      ctx.moveTo(20, baseY);
+      ctx.lineTo(canvas.width / Math.max(window.devicePixelRatio||1,1) - 20, baseY);
+      ctx.stroke();
+      ctx.restore();
+
+      // draw history
+      strokes.forEach(s => {
+        ctx.save();
+        ctx.scale(Math.max(window.devicePixelRatio||1,1), Math.max(window.devicePixelRatio||1,1));
+        ctx.lineWidth = s.size;
+        ctx.strokeStyle = s.color;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        s.points.forEach((p, i) => {
+          if (i === 0) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
+        });
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      // draw current
+      if (points.length > 0) {
+        ctx.save();
+        ctx.scale(Math.max(window.devicePixelRatio||1,1), Math.max(window.devicePixelRatio||1,1));
+        ctx.lineWidth = Number(penSize.value);
+        ctx.strokeStyle = penColor.value;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        points.forEach((p, i) => {
+          if (i === 0) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
+        });
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    // Undo
+    undoBtn.addEventListener('click', () => {
+      strokes.pop();
+      redrawAll();
+    });
+
+    // Clear
+    clearBtn.addEventListener('click', () => {
+      strokes.length = 0;
+      points = [];
+      redrawAll();
+    });
+
+    // Save -> upload -> postMessage
+    saveBtn.addEventListener('click', async () => {
+      // render to a white-background PNG
+      const exportCanvas = document.createElement('canvas');
+      const rect = canvas.getBoundingClientRect();
+      exportCanvas.width = rect.width;
+      exportCanvas.height = rect.height;
+      const ex = exportCanvas.getContext('2d');
+      ex.fillStyle = '#ffffff';
+      ex.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+      // draw at 1x CSS pixel
+      ex.drawImage(canvas, 0, 0, exportCanvas.width, exportCanvas.height);
+
+      const filename = 'signature_' + Date.now() + '.png';
+
+      try {
+        const blob = await new Promise(res => exportCanvas.toBlob(res, 'image/png', 1));
+        const fd = new FormData();
+        fd.append('file', blob, filename);
+        // 서버 업로드 엔드포인트 변경 가능
+        const resp = await fetch('/api/uploads/signature', {
+          method: 'POST',
+          body: fd,
+          credentials: 'include'
+        });
+
+        if (!resp.ok) throw new Error('업로드 실패');
+        const json = await resp.json(); // {url, filename}
+        if (window.opener) {
+          window.opener.postMessage({ type:'SIGNATURE_SAVED', payload: { url: json.url, filename: json.filename } }, '*');
+        }
+        window.close();
+      } catch (err) {
+        // 서버 없을 때 dataURL 대체
+        const dataUrl = exportCanvas.toDataURL('image/png');
+        if (window.opener) {
+          window.opener.postMessage({ type:'SIGNATURE_SAVED', payload: { dataUrlFallback: dataUrl, filename } }, '*');
+        }
+        window.close();
+      }
+    });
+
+    // Close
+    closeBtn.addEventListener('click', () => window.close());
+
+    // Event bindings
+    canvas.addEventListener('pointerdown', startDraw);
+    canvas.addEventListener('pointermove', draw);
+    window.addEventListener('pointerup', endDraw);
+    canvas.addEventListener('touchstart', startDraw, {passive:false});
+    canvas.addEventListener('touchmove', draw, {passive:false});
+    window.addEventListener('touchend', endDraw);
+
+    // init
+    window.addEventListener('resize', fitCanvasToContainer);
+    // First layout
+    fitCanvasToContainer();
+  </script>
+</body>
+</html>

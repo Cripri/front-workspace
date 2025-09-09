@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>주민등록표 등본(초본) - 서명 연동</title>
+  <link rel="stylesheet" href="/main.css" />
+  <script defer src="/main.js"></script>
+  <style>
+    /* Page-specific minimal styles */
+    .field { margin: 12px 0; }
+    .btn { padding: 10px 14px; border: 1px solid #ccc; border-radius: 8px; background:#fff; cursor:pointer; }
+    .btn.primary { background:#0ea5e9; color:#fff; border-color:#0ea5e9; }
+    .sig-preview { display:none; margin-top:10px; }
+    .sig-preview img { max-width: 360px; max-height: 180px; border:1px solid #ddd; }
+    .note { color:#666; font-size: 12px; }
+  </style>  
+</head>
+<body>
+  <main class="container">
+    <h1>주민등록표 등본(초본) 발급 신청</h1>
+
+    <div class="field">
+      <label for="signatureUrl">서명(사인)</label><br/>
+      <input type="hidden" id="signatureUrl" name="signatureUrl" />
+      <button id="openSignBtn" class="btn primary" type="button">서명 작성하기</button>
+      <div class="sig-preview" id="sigPreview">
+        <div class="note">저장된 서명</div>
+        <img id="sigImg" alt="저장된 서명 미리보기" />
+        <div>
+          <a id="sigLink" href="#" target="_blank" rel="noopener">첨부파일 열기</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 제출 버튼 예시 -->
+    <div class="field">
+      <button type="submit" class="btn">제출</button>
+    </div>
+  </main>
+
+  <script>
+    // 팝업 열기
+    document.getElementById('openSignBtn').addEventListener('click', () => {
+      const w = 700, h = 500;
+      const y = window.top.outerHeight / 2 + window.top.screenY - ( h / 2);
+      const x = window.top.outerWidth / 2 + window.top.screenX - ( w / 2);
+      window.open('signtest', 'signPopup',
+        `width=${w},height=${h},left=${x},top=${y},resizable=yes,scrollbars=no`);
+    });
+
+    // 팝업 -> 부모창 데이터 수신
+    window.addEventListener('message', (e) => {
+      // 보안: 필요시 origin 체크
+      if (!e.data || e.data.type !== 'SIGNATURE_SAVED') return;
+      const { url, filename, dataUrlFallback } = e.data.payload || {};
+      const sigInput = document.getElementById('signatureUrl');
+      const img = document.getElementById('sigImg');
+      const link = document.getElementById('sigLink');
+      const wrap = document.getElementById('sigPreview');
+
+      if (url) {
+        sigInput.value = url;
+        img.src = url;
+        link.href = url;
+      } else if (dataUrlFallback) {
+        // 서버 연동이 아직 없을 때 임시 사용
+        sigInput.value = dataUrlFallback;
+        img.src = dataUrlFallback;
+        link.href = dataUrlFallback;
+      }
+
+      wrap.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

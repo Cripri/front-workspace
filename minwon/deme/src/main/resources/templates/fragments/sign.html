@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>사인 패드 (그리기 & 이미지 저장)</title>
+  <link rel="stylesheet" href="/css/minwon_maker/sign.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="toolbar">
+        <div class="group">
+          <label for="color">펜 색상</label>
+          <span class="swatch"><input id="color" type="color" value="#0f172a"></span>
+        </div>
+        <div class="group">
+          <label for="size">굵기</label>
+          <input id="size" type="range" min="1" max="24" step="1" value="4">
+          <span id="size-val" aria-live="polite">4px</span>
+        </div>
+        <div class="group toggle">
+          <input id="eraser" type="checkbox" />
+          <label for="eraser">지우개</label>
+        </div>
+        <button class="btn secondary" id="undo" title="되돌리기 (Ctrl+Z)">↶ 되돌리기</button>
+        <button class="btn danger" id="clear">전체 지우기</button>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="sig-canvas"></canvas>
+      </div>
+
+      <div class="hint">
+        • 마우스/터치/펜으로 서명하세요.
+      </div>
+
+      <div class="footer">
+        <button class="btn ok" id="save-png">PNG 저장 (투명)</button>
+        <button class="btn" id="save-png-white">PNG 저장 (흰 배경)</button>
+        <button class="btn" id="save-jpg">JPG 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/sign.js"></script>
+</body>
+</html>
