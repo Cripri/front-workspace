@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>업로드 완료</title></head>
+<body>
+  <h1>업로드 완료</h1>
+  <p>파일: <b th:text="${name}">이름</b></p>
+  <p>ID: <code th:text="${id}">1</code></p>
+  <p><a th:href="@{'/attachments/' + ${id} + '/download'}">다운로드</a></p>
+
+  <p><a href="/attachments/upload">다른 파일 올리기</a></p>
+</body>
+</html>
